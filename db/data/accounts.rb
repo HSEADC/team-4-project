@@ -13,12 +13,16 @@ def create_accounts
     10 times do
         username = Faker::Internet.username
         Account.create (
-            image: 
-            email: 
+            image: ,
+            email: Faker::Email.email,
             description:
-            url:
-            type:
+            url: 
+            type: 
             contacts:
+                behance: "behance.net/#{username}",
+                insta: "@#{username}",
+                tg: "@#{username}",
+                vk: "vk.com/#{username}",
             company_id:
             user_id:
 )
