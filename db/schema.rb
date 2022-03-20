@@ -53,7 +53,7 @@ ActiveRecord::Schema.define(version: 2022_03_17_195849) do
   end
 
   create_table "companies", force: :cascade do |t|
-    t.string "title"
+    t.string "name"
     t.boolean "verified"
     t.integer "account_id"
     t.datetime "created_at", precision: 6, null: false
@@ -87,7 +87,6 @@ ActiveRecord::Schema.define(version: 2022_03_17_195849) do
 
   create_table "vacancies", force: :cascade do |t|
     t.string "status"
-    t.string "type"
     t.string "grade"
     t.string "title"
     t.string "description"

@@ -2,7 +2,6 @@ class CreateVacancy < ActiveRecord::Migration[6.1]
   def change
     create_table :vacancies do |t|
       t.string :status
-      t.string :type
       t.string :grade
       t.string :title
       t.string :description
