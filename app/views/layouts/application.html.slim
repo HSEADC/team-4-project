@@ -1,0 +1,35 @@
+doctype html
+html
+  head
+    title
+      | ADC
+    meta[name="viewport" content="width=device-width,initial-scale=1"]
+    = csrf_meta_tags
+    = csp_meta_tag
+    = stylesheet_link_tag 'application', media: 'all'
+    = javascript_pack_tag 'application'
+  
+  body
+    .menubar
+      .menu_items_left
+        .a
+          .logo.menu_item Это мое меню
+        .a 
+          .logo.menu_item Это мое меню
+      .menu_items_right
+        .h3
+          .logo.menu_item Это мое меню
+        .h3
+          .logo.menu_item Это мое меню
+
+    .container
+      = yield
+
+    footer
+      p © ADC (2022)
+
+      .footer
+        p О нас
+        p Конфиденциальность
+        p Поступление
+        p Сотрудничество

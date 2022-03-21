@@ -19,6 +19,8 @@ gem 'ffaker'
 gem 'faker'
 gem 'pg'
 
+gem "slim-rails"
+
 gem 'carrierwave'
 
 group :development, :test do

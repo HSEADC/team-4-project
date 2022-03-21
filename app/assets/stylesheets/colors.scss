@@ -1,0 +1,29 @@
+// Основные цвета
+
+$red: #FF3F3FB2;
+.red { color: $red !important; }
+
+$green: #41EF3E;
+$hover-green: #3ABF38;
+$action-green: #195E18;
+
+.green { color: $green !important; }
+.hover-green { color: $hover-green !important; }
+.action-green { color: $action-green !important; }
+
+$black: #000;
+
+// Оттенки Серого
+$grey1: #FFFFFFFA;
+$grey2: #F1F1F180;
+$grey3: #EBEBF533;
+
+.grey1 { color: $grey1 !important; }
+.grey2 { color: $grey2 !important; }
+.grey3 { color: $grey3 !important; }
+
+// Background
+$bg-primary: #B0AFD224;
+$bg-secondary: #B0AFD217;
+.bg-primary { color: $bg-primary !important; }
+.bg-secondary { color: $bg-secondary !important; }

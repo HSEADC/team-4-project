@@ -1,0 +1,84 @@
+@import "colors";
+@import "fonts";
+@import "atoms";
+
+$menubar-left: 11.625rem;
+$menubar-right: 6rem;
+$menubar-top: 0.5rem;
+
+$menubar-width: calc(100vw - $menubar-left - $menubar-right);
+$menubar-height: 5rem;
+
+@mixin menu-paddings {
+    padding-top: $menubar-top;
+    padding-left: $menubar-left;
+    padding-right: $menubar-right;
+}
+
+.menubar {
+  top:0px;
+  width: h;
+  height: $menubar-height;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.125rem;
+  @include menu-paddings;
+
+//   .menu_item {
+//     @include s_button_font;
+//   }
+
+//   .menu_item_icon {
+//     @include images(28px, 28px, 50%);
+//   }
+
+//   .logo {
+//     display: block;
+//     background-image: url("logo.svg");
+//     background-size: cover;
+//     width: 92px;
+//     height: 20px;
+//     margin-top: -8px;
+//   }
+
+  .menu_items_left {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .menu_items_right,
+  .current_user {
+    display: flex;
+    align-items: center;
+  }
+
+  .menu_items_left,
+  .menu_items_right {
+    a {
+      margin-right: 20px;
+    }
+
+    .current_user {
+      margin-right: 124px;
+    }
+  }
+
+  .settings,
+  .log_out {
+    display: none;
+  }
+
+  &:hover {
+    .settings,
+    .log_out {
+      display: block;
+    }
+
+    .current_user {
+      margin-right: 20px;
+    }
+  }
+}

@@ -1,0 +1,63 @@
+@import "colors";
+
+@font-face {
+  font-family: "VelaSans";
+  src: url("../fonts/VelaSans-Bold.woff") format("woff"),
+    url("../fonts/VelaSans-ExtraBold.woff") format("woff"),
+    url("../fonts/VelaSans-ExtraLight.woff") format("woff"),
+    url("../fonts/VelaSans-Light.woff") format("woff"),
+    url("../fonts/VelaSans-Medium.woff") format("woff"),
+    url("../fonts/VelaSans-Regular.woff") format("woff"),
+    url("../fonts/VelaSans-SemiBold.woff") format("woff");
+ }
+
+h1, h2, h3, p, .footnote, a,
+.h1, .h2, .h3, .p, .a, div {
+  font-family: 'VelaSans', sans-serif;
+  font-style: normal;
+}
+
+h1, h2, h3 { font-weight: bold; }
+h4 { font-weight: 600; }
+
+p, .footnote, a, .a { color: $grey2; }
+
+a, .a {
+  text-decoration: none;
+  // &:hover {
+  //   // color: $dark;
+  // }
+}
+
+@mixin font_settings($size, $height) {
+  font-size: $size;
+  line-height: $height;
+}
+
+// // Headers
+
+@mixin h1 { @include font_settings(36px, 40px) }
+h1 { @include h1; }
+.h1 { @include h1; }
+
+@mixin h2 { @include font_settings(22px, 32px) }
+h2 { @include h2; }
+.h2 { @include h2; }
+
+@mixin h3 { @include font_settings(19px, 22px) }
+h3 { @include h3; }
+.h3 { @include h3; }
+
+// // Paragraphs
+@mixin p { @include font_settings(18px, 30px) }
+p { @include p; }
+.p { @include p; }
+
+// // tags 
+.footnote { @include font_settings(14px, 20px) }
+.button { @include font_settings(15px, 21px) }
+
+// // Buttons
+@mixin l_button_font { @include font_settings(20px, 24px) }
+// @mixin m_button_font { @include font_settings(18px, 24px) }
+// @mixin s_button_font { @include font_settings(16px, 16px) }

@@ -1,3 +1,3 @@
 Rails.application.routes.draw do
-  resource :post, only: %i[index] 
+  resources :vacancies, only: [:index]
 end

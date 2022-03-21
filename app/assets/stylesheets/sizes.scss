@@ -1,0 +1,35 @@
+$size-tiny: 2px;
+$size-xxxs: 4px;
+$size-xxs: 8px;
+$size-xs: 12px;
+$size-s: 16px;
+$size-m: 20px;
+$size-l: 24px;
+$size-xl: 32px;
+$size-xxl: 48px;
+$size-xxxl: 64px;
+$size-huge: 23.25rem;
+
+.width-tiny { width: $size-tiny; }
+.width-xxxs { width: $size-xxxs; }
+.width-xxs { width: $size-xxs; }
+.width-xs { width: $size-xs; }
+.width-s { width: $size-s; }
+.width-m { width: $size-m; }
+.width-l { width: $size-l; }
+.width-xl { width: $size-xl; }
+.width-xxl { width: $size-xxl; }
+.width-xxxl { width: $size-xxxl; }
+.width-huge { width: $size-huge; }
+
+.height-tiny-h { height: $size-tiny; }
+.height-xxxs-h { height: $size-xxxs; }
+.height-xxs-h { height: $size-xxs; }
+.height-xs-h { height: $size-xs; }
+.height-s-h { height: $size-s; }
+.height-m-h { height: $size-m; }
+.height-l-h { height: $size-l; }
+.height-xl-h { height: $size-xl; }
+.height-xxl-h { height: $size-xxl; }
+.height-xxxl-h { height: $size-xxxl; }
+.height-huge-h { height: $size-huge; }
