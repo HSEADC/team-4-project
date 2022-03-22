@@ -3,13 +3,10 @@
 @import "icons";
 @import "constants";
 
-
-// width: fit-content;
-
 @mixin button($padding-w, $padding-h) {
+  @include border-radius;
   padding: $padding-h $padding-w;
   display: block;
-  border-radius: $border-radius;
   text-align: center;
   border: none;
   outline: 0;
@@ -19,37 +16,28 @@
   }
 }
 
-@mixin button_colors($background, $font_color, $hover, $action) {
-  background-color: $background;
-  color: $font_color;
-  &:hover {
-    background-color: $hover;
-    color: $font_color;
-  }
-
-  &:active {
-    background-color: $action;
-  }
-}
-
 .l_button {
-    @include button($padding-w, $padding-w);
-    @include h2;
-    @include font_settings(22px, 32px);
-}
-
-.green_button {
-    @include button_colors($green, $black, $hover-green, $action-green);
+  @include button($padding-w, $padding-w);
+  @include h2;
+  @include font_settings(1.375rem, 2rem);
 }
 
 .s_button {
-    @include button($padding-w, $padding-h);
-    @include h2;
-    @include font_settings(22px, 32px);
+  @include button($padding-w, $padding-h);
+  @include h2;
+  @include font_settings(0.9375rem, 1.3125rem);
+}
+
+.green_button {
+  @include colors($green, $black);
+  @include hover_colors($hover-green, $black);
+  @include active_colors($active-green, $black);
 }
 
 .black_button {
-    @include button_colors($green, $black, $hover-green, $action-green);
+  @include colors($bg-secondary, $grey1);
+  @include hover_colors($bg-secondary, $grey2);
+  @include disabled_colors($bg-secondary, $grey3);
 }
 
 // .horizontal {

@@ -11,9 +11,19 @@
     url("../fonts/VelaSans-SemiBold.woff") format("woff");
  }
 
-h1, h2, h3, p, .footnote, a,
+ @font-face {
+  font-family: "Pixeboy";
+  src: url("../fonts/Pixeboy.woff") format("woff"),
+ }
+
+h1, h2, h3, p, .footnote, .button, a,
 .h1, .h2, .h3, .p, .a, div {
   font-family: 'VelaSans', sans-serif;
+  font-style: normal;
+}
+
+h4 {
+  font-family: 'Pixeboy';
   font-style: normal;
 }
 
@@ -36,28 +46,33 @@ a, .a {
 
 // // Headers
 
-@mixin h1 { @include font_settings(36px, 40px) }
+@mixin h1 { @include font_settings(2.25rem, 2.5rem) }
 h1 { @include h1; }
 .h1 { @include h1; }
 
-@mixin h2 { @include font_settings(22px, 32px) }
+@mixin h2 { @include font_settings(1.375rem, 2rem) }
 h2 { @include h2; }
 .h2 { @include h2; }
 
-@mixin h3 { @include font_settings(19px, 22px) }
+@mixin h3 { @include font_settings(1.1875rem, 1.375rem) }
 h3 { @include h3; }
 .h3 { @include h3; }
 
+@mixin h4 { @include font_settings(2.5rem, 2.75rem) }
+h4 { @include h4; }
+.h4 { @include h4; }
+
 // // Paragraphs
-@mixin p { @include font_settings(18px, 30px) }
+@mixin p { @include font_settings(1.125rem, 1.875rem) }
 p { @include p; }
 .p { @include p; }
 
 // // tags 
-.footnote { @include font_settings(14px, 20px) }
-.button { @include font_settings(15px, 21px) }
+.footnote { @include font_settings(0.875rem, 1.25rem) }
+.button { @include font_settings(0.9375rem, 1.3125rem) }
 
 // // Buttons
-@mixin l_button_font { @include font_settings(20px, 24px) }
+@mixin l_button_font { @include font_settings(1.25rem, 1.5rem) }
+@mixin s_button_font { @include font_settings(0.9375rem, 1.3125rem) }
 // @mixin m_button_font { @include font_settings(18px, 24px) }
 // @mixin s_button_font { @include font_settings(16px, 16px) }

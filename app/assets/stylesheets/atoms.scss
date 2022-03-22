@@ -1,10 +1,10 @@
 // @import "colors";
 // @import "fonts";
-// @import "icons";
+@import "sizes";
 
-// // Buttons
-// // .button_size.button_name
-
+i {
+    padding: $size-xxxs;
+}
 
 // // ICON BUTTONS
 // // .button_size.icon

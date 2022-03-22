@@ -1,0 +1,24 @@
+@import "constants";
+@import "colors";
+
+.card {
+    @include border-radius;
+    padding: 1.5rem 1.25rem;
+    background-color: $bg-secondary;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-vacancy {
+    width: auto;
+
+    .logo {
+        display: flex;
+        align-items: center;
+        img {
+            @include square(2rem);
+            background-color: blue; // временно: пока нет картинки
+        }
+    }
+    .info, .tags { display: flex; }
+}

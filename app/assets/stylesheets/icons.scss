@@ -4,23 +4,22 @@
     height: $size;
   }
   
-  .bag { @include icon("icons/bag.svg", 32px); }
-  .behance { @include icon("icons/behance.svg", 24px); }
-  .bookmark { @include icon("icons/bookmark.svg", 24px); }
-  .brush { @include icon("icons/brush.svg", 24px); }
-  .bus { @include icon("icons/bus.svg", 24px); }
-  .calendar { @include icon("icons/calendar.svg", 24px); }
-  .clock { @include icon("icons/clock.svg", 24px); }
-  .downloads { @include icon("icons/downloads.svg", 24px); }
-  .edit { @include icon("icons/edit.svg", 20px); }
-  .fire { @include icon("icons/fire.svg", 20px); }
-  .instagram { @include icon("icons/instagram.svg", 36px); }
-  .link { @include icon("icons/link.svg", 140px); }
-  .location { @include icon("icons/location.svg", 216px); }
-  .mail { @include icon("icons/mail.svg", 32px); }
-  .money { @include icon("icons/money.svg", 32px); }
-  .school { @include icon("icons/school.svg", 32px); }
-  .search { @include icon("icons/search.svg", 32px); }
-  .telegram { @include icon("icons/telegram.svg", 32px); }
-  .uploads { @include icon("icons/uploads.svg", 32px); }
-  .work { @include icon("icons/work.svg", 32px); }
+  .bag { @include icon("icons/bag.svg", 1.5rem); }
+  .behance { @include icon("icons/behance.svg", 1.5rem); }
+  .bookmark { @include icon("icons/bookmark.svg", 1.5rem); }
+  .brush { @include icon("icons/brush.svg", 1.5rem); }
+  .bus { @include icon("icons/bus.svg", 1.5rem); }
+  .calendar { @include icon("icons/calendar.svg", 1.5rem); }
+  .clock { @include icon("icons/clock.svg", 1.5rem); }
+  .downloads { @include icon("icons/downloads.svg", 1.5rem); }
+  .edit { @include icon("icons/edit.svg", 1.5rem); }
+  .fire { @include icon("icons/fire.svg",  1.5rem); }
+  .location { @include icon("icons/location.svg",  1.5rem); }
+  .mail { @include icon("icons/mail.svg", 1.5rem); }
+  .money { @include icon("icons/money.svg", 1.5rem); }
+  .school { @include icon("icons/school.svg", 1.5rem); }
+  .search { @include icon("icons/search.svg", 1.5rem); }
+  .telegram { @include icon("icons/telegram.svg", 1.5rem); }
+  .uploads { @include icon("icons/uploads.svg", 1.5rem); }
+  .work { @include icon("icons/work.svg", 1.5rem); }
+

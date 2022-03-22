@@ -18,6 +18,7 @@ gem 'webpacker', '~> 5.0'
 gem 'ffaker'
 gem 'faker'
 gem 'pg'
+gem 'devise'
 
 gem "slim-rails"
 

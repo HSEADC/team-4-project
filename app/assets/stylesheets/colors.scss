@@ -5,11 +5,11 @@ $red: #FF3F3FB2;
 
 $green: #41EF3E;
 $hover-green: #3ABF38;
-$action-green: #195E18;
+$active-green: #195E18;
 
 .green { color: $green !important; }
 .hover-green { color: $hover-green !important; }
-.action-green { color: $action-green !important; }
+.active-green { color: $active-green !important; }
 
 $black: #000;
 
@@ -27,3 +27,27 @@ $bg-primary: #B0AFD224;
 $bg-secondary: #B0AFD217;
 .bg-primary { color: $bg-primary !important; }
 .bg-secondary { color: $bg-secondary !important; }
+
+// IXINS
+@mixin colors($background, $color) {
+    background-color: $background;
+    color: $color;
+}
+
+@mixin hover_colors($background, $color) {
+    &:hover {
+        @include colors($background, $color);
+    }
+}
+
+@mixin active_colors($background, $color) {    
+    &:active {
+        @include colors($background, $color);
+    }
+}
+
+@mixin disabled_colors($background, $color) {    
+    &:disabled {
+        @include colors($background, $color);
+    }
+}

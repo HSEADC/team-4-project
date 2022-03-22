@@ -1,3 +1,17 @@
-$border-radius: 0.75rem;
+@import "sizes";
+
 $padding-w: 1rem;
 $padding-h: 0.5rem;
+
+@mixin square($size) {
+    width: $size;
+    height: $size;
+}
+
+@mixin border-radius { border-radius: $size-xs; }
+
+.footnote {
+    i {
+        padding: $size-xxxs;
+    }
+}
