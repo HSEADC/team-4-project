@@ -2,6 +2,28 @@
     width: fit-content;
 }
 
+$size-1rem: 1rem;
+$size-2rem: 2rem;
+$size-4rem: 4rem;
+$size-6rem: 6rem;
+$size-8rem: 8rem;
+$size-20rem: 20rem;
+
+.width-1rem { width: $size-1rem; }
+.width-2rem { width: $size-2rem; }
+.width-4rem { width: $size-4rem; }
+.width-6rem { width: $size-6rem; }
+.width-8rem { width: $size-8rem; }
+.width-20rem { width: $size-20rem; }
+
+.height-1rem { width: $size-1rem; }
+.height-2rem { width: $size-2rem; }
+.height-4rem { width: $size-4rem; }
+.height-6rem { height: $size-6rem; }
+.height-20rem { height: $size-20rem; }
+
+// ----
+
 $size-tiny: 0.125rem;
 $size-xxxs: 0.25rem;
 $size-xxs: 0.5rem;

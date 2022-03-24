@@ -2,29 +2,30 @@
 
 @font-face {
   font-family: "VelaSans";
-  src: url("../fonts/VelaSans-Bold.woff") format("woff"),
-    url("../fonts/VelaSans-ExtraBold.woff") format("woff"),
-    url("../fonts/VelaSans-ExtraLight.woff") format("woff"),
-    url("../fonts/VelaSans-Light.woff") format("woff"),
-    url("../fonts/VelaSans-Medium.woff") format("woff"),
-    url("../fonts/VelaSans-Regular.woff") format("woff"),
-    url("../fonts/VelaSans-SemiBold.woff") format("woff");
+  src: url("VelaSans-Bold.woff") format("woff"),
+    url("VelaSans-ExtraBold.woff") format("woff"),
+    url("VelaSans-ExtraLight.woff") format("woff"),
+    url("VelaSans-Light.woff") format("woff"),
+    url("VelaSans-Medium.woff") format("woff"),
+    url("VelaSans-Regular.woff") format("woff"),
+    url("VelaSans-SemiBold.woff") format("woff");
  }
 
  @font-face {
   font-family: "Pixeboy";
-  src: url("../fonts/Pixeboy.woff") format("woff"),
+  src: url("Pixeboy.woff") format("woff");
  }
 
 h1, h2, h3, p, .footnote, .button, a,
 .h1, .h2, .h3, .p, .a, div {
-  font-family: 'VelaSans', sans-serif;
+  font-family: 'VelaSans';
   font-style: normal;
 }
 
 h4 {
   font-family: 'Pixeboy';
   font-style: normal;
+  font-size: 2.5rem;
 }
 
 h1, h2, h3 { font-weight: bold; }
@@ -67,7 +68,7 @@ h4 { @include h4; }
 p { @include p; }
 .p { @include p; }
 
-// // tags 
+// // tags
 .footnote { @include font_settings(0.875rem, 1.25rem) }
 .button { @include font_settings(0.9375rem, 1.3125rem) }
 

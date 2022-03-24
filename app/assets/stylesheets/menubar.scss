@@ -1,23 +1,28 @@
 @import "colors";
 @import "fonts";
 @import "atoms";
+@import "constants";
 
-$menubar-left: 11.625rem;
-$menubar-right: 6rem;
 $menubar-top: 0.5rem;
 
-$menubar-width: calc(100vw - $menubar-left - $menubar-right);
+$menubar-width: calc(100vw - #{$side-margin} - #{$side-margin});
 $menubar-height: 5rem;
 
 @mixin menu-paddings {
     padding-top: $menubar-top;
-    padding-left: $menubar-left;
-    padding-right: $menubar-right;
+    padding-left: $side-margin;
+    padding-right: $side-margin;
+}
+
+.menu-logo {
+  background-color: blue;
+  width: 40px;
+  height: 40px;
 }
 
 .menubar {
   top:0px;
-  width: h;
+  width: $menubar-width;
   height: $menubar-height;
   display: flex;
   flex-direction: row;
@@ -25,14 +30,6 @@ $menubar-height: 5rem;
   align-items: center;
   font-size: 1.125rem;
   @include menu-paddings;
-
-//   .menu_item {
-//     @include s_button_font;
-//   }
-
-//   .menu_item_icon {
-//     @include images(28px, 28px, 50%);
-//   }
 
 //   .logo {
 //     display: block;
@@ -43,42 +40,13 @@ $menubar-height: 5rem;
 //     margin-top: -8px;
 //   }
 
-  .menu_items_left {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-  }
-
-  .menu_items_right,
-  .current_user {
-    display: flex;
-    align-items: center;
-  }
-
   .menu_items_left,
   .menu_items_right {
-    a {
-      margin-right: 1.25rem;
-    }
-
-    .current_user {
-      margin-right: 7.75rem;
-    }
+    display: flex;
+    align-items: center;
+    flex-direction: row;
   }
 
-  .settings,
-  .log_out {
-    display: none;
-  }
-
-  &:hover {
-    .settings,
-    .log_out {
-      display: block;
-    }
-
-    .current_user {
-      margin-right: 1.25rem;
-    }
-  }
+  .menu_items_left {}
+  .menu_items_right {}
 }

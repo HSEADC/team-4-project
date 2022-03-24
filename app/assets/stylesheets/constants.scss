@@ -1,7 +1,14 @@
 @import "sizes";
 
+$container-w: calc(100vw - 8rem);
+$menubar-height: 5rem;
+$footer-height: 6.75rem;
+
+$side-margin: $size-4rem;
+
 $padding-w: 1rem;
 $padding-h: 0.5rem;
+$vacancy-card-w: $size-20rem;
 
 @mixin square($size) {
     width: $size;

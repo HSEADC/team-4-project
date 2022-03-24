@@ -1,0 +1,29 @@
+@import "constants";
+
+$banner-width: calc(100vw - 8rem);
+$filter-width: 16rem;
+$space: calc(6rem); // расстояние между фильтром и вакансиями
+
+// INDEX
+.banner {
+  width: inherit;
+  background-color: red;
+  height: 16.5rem;
+  @include border-radius;
+  margin-bottom: 3.5rem;
+}
+
+.filter {
+  width: $filter-width; // 256px
+  height: 500px;
+  background-color: purple;
+}
+
+.vacancies {
+  // ширина контейнера - ширина филтра - расстояние от филтра
+  width: calc(#{$container-w} - #{$filter-width} - #{$space});
+  justify-content: flex-end;
+  gap: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+}

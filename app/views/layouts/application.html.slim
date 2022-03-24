@@ -8,27 +8,28 @@ html
     = csp_meta_tag
     = stylesheet_link_tag 'application', media: 'all'
     = javascript_pack_tag 'application'
-  
+
   body
     .menubar
       .menu_items_left
-        .a
-          .logo.menu_item Это мое меню
-        .a 
-          .logo.menu_item Это мое меню
+        .menu-logo
+        h4.grey1 ADC
+        .width-xxs
+        h4.green •
+        .width-xxs
+        h4.green CAREER
       .menu_items_right
-        .h3
-          .logo.menu_item Это мое меню
-        .h3
-          .logo.menu_item Это мое меню
+        .menu_item.s_button.black_button.fit-content Добавить вакансию
+        .width-1rem
+        .menu_item.s_button.black_button.fit-content Вход
 
     .container
       = yield
 
-    footer
+    footer.footer
       p © ADC (2022)
 
-      .footer
+      .info
         p О нас
         p Конфиденциальность
         p Поступление

@@ -14,12 +14,10 @@
  *= require_self
  *= colors
  */
-@import 'colors';
+@import "colors";
 @import "fonts";
+@import "constants";
 
-$menubar-height: 5rem;
-$footer-height: 6.75rem;
- 
 html {
   box-sizing: border-box;
   background-color: #060606;
@@ -27,8 +25,12 @@ html {
 
 .container {
   position: relative;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
   margin: 0 auto;
-  width: 66.75rem;
-  height: calc(100vh - 5rem - 6.75rem);
-  min-height: calc(100vh - 5rem - 6.75rem);
+  width: calc(100vw - 8rem);
+  min-height: calc(100vh - #{$menubar-height} - #{$footer-height});
 }
