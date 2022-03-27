@@ -22,3 +22,9 @@ $vacancy-card-w: $size-20rem;
         padding: $size-xxxs;
     }
 }
+
+@mixin hover-cursor {
+  &:hover {
+    cursor: pointer;
+  }
+}

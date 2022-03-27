@@ -12,16 +12,19 @@ html
   body
     .menubar
       .menu_items_left
-        .menu-logo
-        h4.grey1 ADC
-        .width-xxs
-        h4.green •
-        .width-xxs
-        h4.green CAREER
+        = link_to root_path do
+          .menu-logo
+          .width-xxs
+          h4.grey1 ADC
+        = link_to root_path do
+          .width-xxs
+          h4.green •
+          .width-xxs
+          h4.green CAREER
       .menu_items_right
-        .menu_item.s_button.black_button.fit-content Добавить вакансию
+        = link_to 'Добавить вакансию', new_vacancy_path, class: 'menu_item s_button black_button fit-content'
         .width-1rem
-        .menu_item.s_button.black_button.fit-content Вход
+        = link_to 'Вход', new_account_session_path, class: 'menu_item s_button black_button fit-content'
 
     .container
       = yield

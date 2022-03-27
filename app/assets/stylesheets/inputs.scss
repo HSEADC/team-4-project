@@ -1,289 +1,78 @@
-// @import "colors";
-// @import "fonts";
+@import "colors";
+@import "fonts";
+@import "constants";
 
-// *:disabled {
-//   opacity: 0.56;
-// }
+@mixin default_input($padding-h, $padding-w) {
+  @include button_font;
+  @include border-radius;
 
-// // Навесить любому инпуту этот класс, включая чекбоксы и тд
+  display: inline-block;
+  box-sizing: border-box;
+  background-color: $bg-secondary;
 
-// @mixin default_input($padding, $padding-r, $padding-l) {
-//   display: inline-block;
-//   box-sizing: border-box;
-//   background-color: transparent;
-//   -webkit-appearance: none;
-//   padding: $padding $padding-r $padding $padding-l;
-//   border-radius: 8px;
-//   border: 1px solid $grey3;
-//   color: $dark;
-//   @include p2;
+  height: 2.5rem;
+  padding: $padding-h $padding-w;
 
-//   &:hover {
-//     border: 1px solid $grey4;
-//     color: $dark;
-//   }
-//   &::-webkit-input-placeholder {
-//     color: $grey3;
-//   }
-//   &::-moz-placeholder {
-//     color: $grey3;
-//   }
-//   &:-ms-input-placeholder {
-//     color: $grey3;
-//   }
-//   &::-ms-input-placeholder {
-//     color: $grey3;
-//   }
-//   &::placeholder {
-//     color: $grey5;
-//   }
+  border: none;
+  color: $grey1;
 
-//   &:focus {
-//     outline: none;
-//     border: 1px solid $primary;
-//   }
+  width: 16rem;
 
-//   &:active {
-//     outline: none;
-//     border: 1px solid $primary;
-//     color: $dark;
-//   }
+  &::placeholder { color: $grey2; }
+}
 
-//   &:invalid {
-//     background-color: $light_red;
-//     border: 1px solid #ffe5e3;
-//     &:focus,
-//     &:active {
-//       border: 1px solid $red;
-//       background-color: transparent;
-//     }
-//   }
-//   &[type="number"]::-webkit-inner-spin-button,
-//   &[type="number"]::-webkit-outer-spin-button {
-//     -webkit-appearance: none;
-//     margin: 0;
-//   }
-//   // &select {
-//   //   &:hover {
-//   //     cursor: pointer;
-//   //   }
-//   // }
-// }
+// INPUT
 
-// .default_input {
-//   @include default_input(16px, 16px, 20px);
-// }
+.input {
+  @include default_input(0.5rem, 0.75rem);
+}
 
-// .label_default_input {
-//   position: relative;
+textarea {
+  @include default_input(0.5rem, 0.75rem);
+  resize: none;
+  overflow: hidden;
+  width: 20rem;
+  min-height: 6rem;
+}
 
-//   label {
-//     position: absolute;
-//     top: 21px;
-//     left: 21px;
-//     transition: top 0.3s ease-in-out, opacity 0.1s ease-in-out;
-//     opacity: 0;
-//     background-color: $white;
-//     padding: 2px 8px;
-//     font-size: 0px;
-//     z-index: 0;
-//   }
+// SEARCH
 
-//   .default_input {
-//     width: inherit;
-//   }
+.menu_search {
+  .search_input { @include default_input(0.75rem, 2.5rem); }
+  .search {
+    position: absolute;
+    opacity: 50%;
+    margin: 0.6rem 0.75rem;
+  }
+}
 
-//   .default_input:invalid + label {
-//     color: $red;
-//   }
+// CHECK BOX
+.check_box {
+  display: inline-flex;
+}
 
-//   .default_input:not([value='']) + label,
-//   .default_input:focus + label {
-//     @include p4;
-//     opacity: 1;
-//     color: $black;
-//     top: -11px;
-//     box-sizing: border-box;
-//     z-index: 500;
-//   }
+.box {
+  margin: 0;
+  appearance: none;
 
-//   .default_input:not([value='']) + label {
-//     color: $grey3;
-//   }
+  @include square(1.5rem);
+  @include hover-cursor;
+  background-color: transparent;
+  border: 2px solid $green;
+  border-radius: 0.5rem;
 
-//   .default_input:not([value=''])::-webkit-input-placeholder,
-//   .default_input:focus::-webkit-input-placeholder {
-//     opacity: 0;
-//   }
-// }
-// // input_box общая логика для чекбокса
 
-// @mixin box {
-//   position: relative;
-//   width: 24px;
-//   height: 24px;
-//   -webkit-appearance: none;
-//   -moz-appearance: none;
-//   appearance: none;
-//   outline: none;
-//   transition: background 175ms cubic-bezier(0.1, 0.1, 0.25, 1);
+  &:checked {
+    background-color: $green;
+    border: none;
+    padding: 0.25rem;
+    content: url("checkbox.svg");
 
-//   &:hover {
-//     cursor: pointer;
-//     border-color: $grey4;
-//   }
+    @include hover-cursor;
+  }
+}
 
-//   &:invalid {
-//     background-color: $light_red;
-//   }
-
-//   &:invalid + label {
-//     color: $red;
-//   }
-// }
-
-// @mixin checkbox {
-//   border-radius: 4px;
-//   border: 1px solid $grey3;
-
-//   &::before {
-//     position: absolute;
-//     content: "";
-//     display: block;
-//     width: 4px;
-//     height: 12px;
-//     top: 3px;
-//     left: 9px;
-//     border-style: solid;
-//     border-color: $white;
-//     border-width: 0 2px 2px 0;
-//     transform: rotate(45deg);
-//     opacity: 0;
-//   }
-
-//   &:checked {
-//     color: $white;
-//     background: $primary;
-//     border: 1px solid $primary;
-
-//     &::before {
-//       opacity: 1;
-//     }
-
-//     &:hover {
-//       cursor: pointer;
-//       border: 1px solid $dark_primary;
-//       background-color: $dark_primary;
-//     }
-//   }
-// }
-
-// @mixin radio {
-//   border-radius: 50%;
-
-//   &:checked {
-//     color: $white;
-//     background: $primary;
-//     border: 6px solid $grey5;
-
-//     &::before {
-//       opacity: 1;
-//     }
-
-//     &:hover {
-//       cursor: pointer;
-//       background-color: $dark_primary;
-//     }
-//   }
-// }
-
-// @mixin box_label {
-//   @include p2;
-//   margin-left: 16px;
-//   margin-right: 12px;
-
-//   -webkit-user-select: none;
-//   -moz-user-select: none;
-//   -ms-user-select: none;
-//   user-select: none;
-//   // &::before {
-//   //   position: absolute;
-//   //   content: attr(data-content);
-//   //   color: $grey2;
-//   // }
-
-//   &:hover {
-//     cursor: pointer;
-//   }
-// }
-
-// @mixin box_label_container {
-//   display: flex;
-//   justify-content: space-between;
-//   align-items: center;
-//   box-sizing: border-box;
-//   border: 1px solid $grey2;
-//   border-radius: 8px;
-//   padding: 16px;
-// }
-
-// // COUNT
-
-// .count_input {
-//   position: relative;
-//   display: flex;
-//   align-items: center;
-
-//   width: 168px;
-
-//   input[type="number"] {
-//     @include default_input(16px, 36px, 36px);
-//     width: 168px;
-//     text-align: center;
-//   }
-
-//   .minus,
-//   .plus {
-//     position: absolute;
-
-//     &:hover {
-//       cursor: pointer;
-//     }
-//   }
-
-//   .minus {
-//     left: 16px;
-//   }
-
-//   .plus {
-//     right: 16px;
-//   }
-// }
-
-// // textarea
-// // Этот миксин достаточно добавить в нужный контейнер
-
-// @mixin textarea {
-//   textarea {
-//     min-height: 108px;
-//     background-color: $grey2;
-//     color: $dark;
-//   }
-// }
-
-// // SEARCH
-
-// .search_input {
-//   .default_input {
-//     padding: 16px 54px;
-//   }
-//   .search {
-//     position: absolute;
-//     margin: 16px 8px 16px 16px;
-//   }
-// }
-
-// // IMAGE UPLOADER
+// IMAGE UPLOADER
 
 // .image_uploader {
 //   display: flex;
@@ -294,14 +83,14 @@
 //   height: 124px;
 //   border-radius: 8px;
 //   border: 1px dashed $light_orange;
-
+//
 //   .photos {
 //     width: 44px;
 //     height: 44px;
 //     border: 1px solid $light_orange;
 //     border-radius: 50%;
 //   }
-
+//
 //   .file_field {
 //     position: absolute;
 //     cursor: pointer;
@@ -327,56 +116,18 @@
 //   }
 // }
 
-// // autocomplete
+// autocomplete
 
-// input:-webkit-autofill,
-// input:-webkit-autofill:hover,
-// input:-webkit-autofill:focus,
-// textarea:-webkit-autofill,
-// textarea:-webkit-autofill:hover,
-// textarea:-webkit-autofill:focus,
-// select:-webkit-autofill,
-// select:-webkit-autofill:hover,
-// select:-webkit-autofill:focus {
-//   background-color: $white;
-//   -webkit-transition: background-color 5000s ease-in-out 0s;
-//   transition: background-color 5000s ease-in-out 0s;
-// }
-
-// // Messages
-
-// .message_form {
-//   width: calc(100% - 16px);
-//   padding: 8px;
-//   background-color: $grey1;
-
-//   .new_message {
-//     position: relative;
-
-//     .new_message_input {
-//       @include default_input(12px, 12px, 24px);
-//       font-size: 14px;
-//       width: 100%;
-//       background-color: $white;
-//       border: none;
-
-//       &:hover {
-//         border: none;
-//       }
-
-//       &:active {
-//         border: none;
-//       }
-
-//       &:focus {
-//         border: none;
-//       }
-//     }
-
-//     .s_icon_button {
-//       position: absolute;
-//       right: 8px;
-//       top: 9px;
-//     }
-//   }
-// }
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  background-color: $bg-secondary;
+  -webkit-transition: background-color 5000s ease-in-out 0s;
+  transition: background-color 5000s ease-in-out 0s;
+}

@@ -1,0 +1,12 @@
+input id="vehicle1" name="input" class="input" placeholder="Заполни эту хрень"
+
+= text_area :post, :title, class: "input"
+
+.check_box
+  = check_box_tag 'receive_email', 'yes', true, class: 'box'
+  .width-1rem
+  label.button.grey1 for="checkbox" Предлагать варианты без оплаты
+
+.menu_search
+  i.search
+  input.search_input placeholder='Поиск'

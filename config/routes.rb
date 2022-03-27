@@ -1,3 +1,5 @@
 Rails.application.routes.draw do
-  resources :vacancies, only: [:index]
+  devise_for :accounts
+  root to: 'pages#home'
+  resources :vacancies
 end

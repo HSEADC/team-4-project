@@ -34,3 +34,7 @@ html {
   width: calc(100vw - 8rem);
   min-height: calc(100vh - #{$menubar-height} - #{$footer-height});
 }
+
+div {
+  height: fit-content;
+}

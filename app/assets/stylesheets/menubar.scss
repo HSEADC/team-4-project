@@ -14,12 +14,6 @@ $menubar-height: 5rem;
     padding-right: $side-margin;
 }
 
-.menu-logo {
-  background-color: blue;
-  width: 40px;
-  height: 40px;
-}
-
 .menubar {
   top:0px;
   width: $menubar-width;
@@ -31,14 +25,12 @@ $menubar-height: 5rem;
   font-size: 1.125rem;
   @include menu-paddings;
 
-//   .logo {
-//     display: block;
-//     background-image: url("logo.svg");
-//     background-size: cover;
-//     width: 92px;
-//     height: 20px;
-//     margin-top: -8px;
-//   }
+  .menu-logo {
+    display: block;
+    background-image: url("logo.svg");
+    background-size: cover;
+    @include square(2.5rem);
+  }
 
   .menu_items_left,
   .menu_items_right {
@@ -47,6 +39,5 @@ $menubar-height: 5rem;
     flex-direction: row;
   }
 
-  .menu_items_left {}
-  .menu_items_right {}
+  a { display: inline-flex; }
 }

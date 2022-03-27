@@ -11,12 +11,12 @@
     url("VelaSans-SemiBold.woff") format("woff");
  }
 
- @font-face {
+@font-face {
   font-family: "Pixeboy";
   src: url("Pixeboy.woff") format("woff");
- }
+}
 
-h1, h2, h3, p, .footnote, .button, a,
+h1, h2, h3, p, .footnote, .button, a, input,
 .h1, .h2, .h3, .p, .a, div {
   font-family: 'VelaSans';
   font-style: normal;
@@ -70,7 +70,9 @@ p { @include p; }
 
 // // tags
 .footnote { @include font_settings(0.875rem, 1.25rem) }
-.button { @include font_settings(0.9375rem, 1.3125rem) }
+
+@mixin button_font { @include font_settings(0.9375rem, 1.3125rem) }
+.button { @include button_font }
 
 // // Buttons
 @mixin l_button_font { @include font_settings(1.25rem, 1.5rem) }
