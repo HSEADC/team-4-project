@@ -13,12 +13,6 @@ $space: calc(6rem); // расстояние между фильтром и ва�
   margin-bottom: 3.5rem;
 }
 
-.filter {
-  width: $filter-width; // 256px
-  height: 500px;
-  background-color: purple;
-}
-
 .vacancies {
   // ширина контейнера - ширина филтра - расстояние от филтра
   width: calc(#{$container-w} - #{$filter-width} - #{$space});
