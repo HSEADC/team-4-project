@@ -1,0 +1,13 @@
+= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "device" }) do |f|
+  img.avatar
+  .height-1rem
+
+  h2.grey1.text-center Вход
+  .height-l
+  = f.email_field :email, autofocus: true, autocomplete: "email", class: "input", placeholder: "Email"
+  .height-m
+  = f.password_field :password, autofocus: true, autocomplete: "current-password", class: "input", placeholder: "Email"
+  .height-m
+  = f.submit "Log in", class: "s_button green_button"
+
+//  = render "devise/shared/links"

@@ -18,7 +18,7 @@
 
   width: 16rem;
 
-  &::placeholder { color: $grey2; }
+  ::placeholder { color: $grey2; }
 }
 
 // INPUT
@@ -128,6 +128,7 @@ select:-webkit-autofill,
 select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
   background-color: $bg-secondary;
+  -webkit-text-fill-color: $grey1;
   -webkit-transition: background-color 5000s ease-in-out 0s;
   transition: background-color 5000s ease-in-out 0s;
 }

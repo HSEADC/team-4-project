@@ -16,33 +16,38 @@ html
           .menu-logo
           .width-xxs
           h4.grey1 ADC
-        = link_to root_path do
-          .width-xxs
-          h4.green •
-          .width-xxs
-          h4.green CAREER
-          .width-2rem
-          h4.grey3 MAIN
-          .width-2rem
-          h4.grey3 ME
-          .width-2rem
-          h4.grey3 YOURNAME
-          .width-2rem
-          h4.grey3 BOOKMARKS
+
+        .width-xxs
+        h4.green •
+        .width-xxs
+        = link_to 'CAREER', vacancies_path, class: "h4 grey3 carrer"
+        .width-2rem
+        = link_to 'MAIN', root_path , class: "h4 grey3 main"
+        .width-2rem
+        = link_to 'ME', vacancies_path, class: "h4 grey3 me"
+        .width-2rem
+        = link_to 'YOURNAME', vacancies_path, class: "h4 grey3 yourname"
+        .width-2rem
+        = link_to 'BOOKMARKS', vacancies_path, class: "h4 grey3 bookmarks"
 
       .menu_items_right
         = link_to 'Добавить вакансию', new_vacancy_path, class: 'menu_item s_button black_button fit-content'
         .width-1rem
         = link_to 'Вход', new_account_session_path, class: 'menu_item s_button black_button fit-content'
 
-    .container
-      = yield
+    - if container_name = controller_name.in?(%w[sessions registrations passwords]) ? "device_container" : "container"
 
-    footer.footer
-      p © ADC (2022)
+    - if controller_name.in?(%w[sessions registrations passwords])
+      .device_container
+        = yield
+    - else
+      .container
+        = yield
+      footer.footer
+        p © ADC (2022)
 
-      .info
-        p О нас
-        p Конфиденциальность
-        p Поступление
-        p Сотрудничество
+        .info
+          p О нас
+          p Конфиденциальность
+          p Поступление
+          p Сотрудничество

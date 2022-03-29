@@ -22,7 +22,7 @@ h1, h2, h3, p, .footnote, .button, a, input,
   font-style: normal;
 }
 
-h4 {
+h4, .h4 {
   font-family: 'Pixeboy';
   font-style: normal;
   font-size: 2.5rem;
@@ -32,13 +32,7 @@ h1, h2, h3 { font-weight: bold; }
 h4 { font-weight: 600; }
 
 p, .footnote, a, .a { color: $grey2; }
-
-a, .a {
-  text-decoration: none;
-  // &:hover {
-  //   // color: $dark;
-  // }
-}
+a, .a { text-decoration: none; }
 
 @mixin font_settings($size, $height) {
   font-size: $size;
@@ -77,5 +71,3 @@ p { @include p; }
 // // Buttons
 @mixin l_button_font { @include font_settings(1.25rem, 1.5rem) }
 @mixin s_button_font { @include font_settings(0.9375rem, 1.3125rem) }
-// @mixin m_button_font { @include font_settings(18px, 24px) }
-// @mixin s_button_font { @include font_settings(16px, 16px) }

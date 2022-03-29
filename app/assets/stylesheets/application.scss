@@ -23,6 +23,14 @@ html {
   background-color: #060606;
 }
 
+.device_container {
+  width: 100%;
+  height: calc(100vh - #{$menubar-height});
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .container {
   position: relative;
 

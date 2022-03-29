@@ -18,9 +18,9 @@ $size-20rem: 20rem;
 .width-16rem { width: $size-16rem; }
 .width-20rem { width: $size-20rem; }
 
-.height-1rem { width: $size-1rem; }
-.height-2rem { width: $size-2rem; }
-.height-4rem { width: $size-4rem; }
+.height-1rem { height: $size-1rem; }
+.height-2rem { height: $size-2rem; }
+.height-4rem { height: $size-4rem; }
 .height-6rem { height: $size-6rem; }
 .height-20rem { height: $size-20rem; }
 
@@ -31,10 +31,11 @@ $size-xxxs: 0.25rem;
 $size-xxs: 0.5rem;
 $size-xs: 0.75rem; // 12px
 $size-s: 1rem; // 16px
-$size-m: 1.25rem;
-$size-l: 1.5rem;
+$size-m: 1.25rem; // 20px
+$size-l: 1.5rem; // 24px
 $size-xl: 2rem;
-$size-xxl: 3rem;
+
+$size-xxl: 7.5rem;
 $size-xxxl: 20rem; // 320px
 $size-xxxxl: 22.5rem; // 360px
 $size-huge: 23.25rem;

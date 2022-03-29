@@ -1,14 +1,17 @@
-// добавит классы стилей для инпутов: подсмотрет можно в examples/inputs
-// ширину можно менят классом сбоку
-
-
-
 h2.grey1 Сфера
+input id="vehicle1" name="input" class="input" placeholder="Заполни эту хрень"
+
+.height-2rem
 
 // Зарплата
-h2.grey1 Зарплата
-.height-xs
+.h2.grey1 Зарплата
+.height-xs |
+.inline
+  input.width-xxl id="vehicle1" name="input" class="input" placeholder="от 3000"
+  .width-1rem
+  input.width-xxl id="vehicle1" name="input" class="input" placeholder="до 200 000"
 
+.height-xs
 
 .check_box
   = check_box_tag 'receive_email', 'yes', true, class: 'box'
@@ -86,7 +89,6 @@ h2.grey1 Опыт работы
   label.button.grey1 for="checkbox" Без опыта
 
 .height-xs
-
 
 .check_box
   = check_box_tag 'receive_email', 'yes', true, class: 'box'
