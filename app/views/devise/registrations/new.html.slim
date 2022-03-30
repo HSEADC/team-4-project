@@ -1,4 +1,5 @@
-= form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "device" }) do |f|
+= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { class: "device", multipart: true }) do |f|
+
   h2.grey1.text-center Регистрация
   .height-1rem
 
@@ -11,13 +12,16 @@
       .s_button.green_button.fit-content Собрать чубрика
 
   .height-l
-  input id="vehicle1" name="input" class="input" placeholder="Заполни эту хрень"
+
+  = f.fields_for :user, User.new do |subform|
+    = subform.text_field :name, autofocus: true, autocomplete: "name", class: "input", placeholder: "Имя"
+
   .height-m
-  = f.email_field :email, autofocus: true, autocomplete: "email", class: "input", placeholder: "Email"
+  = f.email_field :email, autocomplete: "email", class: "input", placeholder: "Email"
   .height-m
-  = f.password_field :password, autofocus: true, autocomplete: "new-password", class: "input", placeholder: "Email"
+  = f.password_field :password, autocomplete: "new-password", class: "input", placeholder: "Пароль"
   .height-m
-  = f.password_field :password_confirmation, autofocus: true, autocomplete: "new-password", class: "input", placeholder: "Email"
+  = f.password_field :password_confirmation, autocomplete: "new-password", class: "input", placeholder: "Пароль еще раз"
   .height-m
 
   .check_box
@@ -27,37 +31,7 @@
 
   .height-m
 
-  = f.submit "Log in", class: "s_button green_button"
+  = f.submit "Регистрация", class: "s_button green_button"
 
-//  = render "devise/shared/links"
-
-
-// <h2>Sign up</h2>
-//
-// <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-//   <%= render "devise/shared/error_messages", resource: resource %>
-//
-//   <div class="field">
-//     <%= f.label :email %><br />
-//     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-//   </div>
-//
-//   <div class="field">
-//     <%= f.label :password %>
-//     <% if @minimum_password_length %>
-//     <em>(<%= @minimum_password_length %> characters minimum)</em>
-//     <% end %><br />
-//     <%= f.password_field :password, autocomplete: "new-password" %>
-//   </div>
-//
-//   <div class="field">
-//     <%= f.label :password_confirmation %><br />
-//     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-//   </div>
-//
-//   <div class="actions">
-//     <%= f.submit "Sign up" %>
-//   </div>
-// <% end %>
-//
-// <%= render "devise/shared/links" %>
+  .height-m
+  = link_to 'Вход', new_account_session_path, class: 'button grey2 text-center'

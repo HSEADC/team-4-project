@@ -1,0 +1,110 @@
+.height-4rem
+= form_for @vacancy, url: { action: "create" }, authenticity_token: false, html: { class: 'form' } do |f|
+  .base_info
+    = f.text_field :title, class: "input h1 grey1", placeholder: "Название вакансии", autocomplete: 'off'
+
+    .height-2rem
+    h3.grey1 О стажировке*
+
+    .height-1rem
+
+
+    = f.text_area :description, class: "input", placeholder: "Введите текст"
+
+    .height-2rem
+
+    h3.grey1 Оплата*
+
+    .height-1rem
+
+    = f.text_field :salary, class: "input", placeholder: "₽"
+
+    .height-1rem
+
+    .check_box
+      = check_box_tag 'receive_email', 'yes', false, class: 'box'
+      .width-1rem
+      label.button.grey1 for="checkbox" На собеседовании
+
+    .height-1rem
+
+    .check_box
+        = check_box_tag 'receive_email', 'yes', false, class: 'box'
+        .width-1rem
+        label.button.grey1 for="checkbox" Без оплаты
+
+    .height-2rem
+
+
+    h3.grey1 Обязанности кандидата*
+
+    .height-1rem
+
+    = f.text_area :description, class: "input", placeholder: "Введите текст"
+
+
+    .height-2rem
+
+
+    h3.grey1 Критерии для кандидата*
+
+    .height-1rem
+
+    = f.fields_for :skill_vacancies, @vacancy.skill_vacancies.build do |subform|
+      = subform.hidden_field :vacancy_id, value: f.object.id
+      = subform.select(:skill_id, options_for_select(Skill.all.pluck(:name, :id)), { include_blank: "Критерии для кандидата*" }, { class: 'input' })
+
+    .height-2rem
+
+
+    h3.grey1 Куда отправлять заявки
+
+    .height-1rem
+
+  //  input id="vehicle1" name="input" class="input" placeholder="Email"
+
+    .height-1rem
+
+    .check_box
+        = check_box_tag 'receive_email', 'yes', false, class: 'box'
+        .width-1rem
+
+
+        label.button.grey1 for="checkbox" На почту указанную при регистрации
+
+
+  .properties.width-xxxxl.card
+
+    .footnote.grey1 Формат*
+
+    .height-xxs
+    - remote = { "офис": false, "удаленка": true }
+    = f.select(:remote, options_for_select(remote), { include_blank: false }, { class: 'input' })
+
+    .height-l
+
+    .footnote.grey1 График*
+
+    .height-xxs
+
+    = f.select(:occupation_type, options_for_select(Vacancy::OCCUPATION_TYPE.invert), { include_blank: false }, { class: 'input' })
+
+    .height-l
+
+    .footnote.grey1 Город*
+
+    .height-xxs
+
+
+    .height-l
+
+    .buttons.inline
+      = link_to "Назад", root_path, class: "s_button black_button fit-content"
+      .width-2rem
+      = f.submit "Опубликовать", class: 's_button green_button fit-content'
+
+.height-4rem
+
+//  = f.fields_for :city_vacancies, @vacancy.city_vacancies.new  do |subform|
+//    = subform.hidden_field :vacancy_id, value: f.object.id
+//    = subform.select(:city_id, options_for_select(City.all.pluck(:name, :id)), { include_blank: "" }, { class: 'input' })

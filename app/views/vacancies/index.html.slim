@@ -1,4 +1,4 @@
-img.banner
+= image_tag "banner.svg", class: 'banner'
 
 .filter.width-16rem
   = render partial: "filter"
@@ -6,4 +6,4 @@ img.banner
 .width-6rem
 
 .vacancies
-  = render partial: "vacancy_card", collection: @vacancies
+  = render partial: "vacancy_card", collection: @vacancies, as: :vacancy

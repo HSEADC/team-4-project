@@ -15,10 +15,45 @@
     .logo {
         display: flex;
         align-items: center;
-        img {
-            @include square(2rem);
-            background-color: blue; // временно: пока нет картинки
-        }
+        img { @include square(2rem); }
     }
     .info, .tags { display: flex; }
+}
+
+.card-image-h2-me {
+  img {
+    background-color: white;
+    border-radius: 1.25rem;
+  }
+  width: auto;
+  @include border-radius;
+  padding: 1.5rem 1.25rem;
+  background-color: $bg-secondary;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-image-me {
+  img {
+    background-color: white;
+    border-radius: 1.25rem;
+  }
+  width: auto;
+  @include border-radius;
+  padding: 1.5rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-text-me {
+  img {
+    background-color: white;
+    border-radius: 1.25rem;
+  }
+  width: auto;
+  @include border-radius;
+  background-color: $bg-secondary;
+  padding: 1.5rem 1.25rem;
+  display: flex;
+  flex-direction: column;
 }

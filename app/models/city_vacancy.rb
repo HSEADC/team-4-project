@@ -1,4 +1,4 @@
 class CityVacancy < ApplicationRecord
-  belongs_to :cities
-  belongs_to :vacancies
+  belongs_to :city
+  belongs_to :vacancy
 end

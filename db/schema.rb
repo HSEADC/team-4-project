@@ -40,22 +40,13 @@ ActiveRecord::Schema.define(version: 2022_03_26_141044) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "city_skills", force: :cascade do |t|
-    t.bigint "skills_id", null: false
-    t.bigint "vacancies_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["skills_id"], name: "index_city_skills_on_skills_id"
-    t.index ["vacancies_id"], name: "index_city_skills_on_vacancies_id"
-  end
-
   create_table "city_vacancies", force: :cascade do |t|
-    t.bigint "cities_id", null: false
-    t.bigint "vacancies_id", null: false
+    t.bigint "city_id", null: false
+    t.bigint "vacancy_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["cities_id"], name: "index_city_vacancies_on_cities_id"
-    t.index ["vacancies_id"], name: "index_city_vacancies_on_vacancies_id"
+    t.index ["city_id"], name: "index_city_vacancies_on_city_id"
+    t.index ["vacancy_id"], name: "index_city_vacancies_on_vacancy_id"
   end
 
   create_table "companies", force: :cascade do |t|
@@ -73,6 +64,15 @@ ActiveRecord::Schema.define(version: 2022_03_26_141044) do
     t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "skill_vacancies", force: :cascade do |t|
+    t.bigint "skill_id", null: false
+    t.bigint "vacancy_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["skill_id"], name: "index_skill_vacancies_on_skill_id"
+    t.index ["vacancy_id"], name: "index_skill_vacancies_on_vacancy_id"
   end
 
   create_table "skills", force: :cascade do |t|
@@ -107,8 +107,8 @@ ActiveRecord::Schema.define(version: 2022_03_26_141044) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  add_foreign_key "city_skills", "skills", column: "skills_id"
-  add_foreign_key "city_skills", "vacancies", column: "vacancies_id"
-  add_foreign_key "city_vacancies", "cities", column: "cities_id"
-  add_foreign_key "city_vacancies", "vacancies", column: "vacancies_id"
+  add_foreign_key "city_vacancies", "cities"
+  add_foreign_key "city_vacancies", "vacancies"
+  add_foreign_key "skill_vacancies", "skills"
+  add_foreign_key "skill_vacancies", "vacancies"
 end

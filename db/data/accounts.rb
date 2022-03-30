@@ -14,11 +14,20 @@ def create_accounts
     # account for companies
     {
         sberbank: 'Сбербанк',
-        mts: 'МТС'
+        mts: 'МТС',
+        anton: 'Антон',
+        lamoda: 'Ламода',
+        perekrestok: 'Перекресток',
+        samokat: 'Самокат',
+        tinkoff: 'Тиньков',
+        vk: 'ВК',
+        vtb: 'ВТБ',
+        yandex: 'Яндекс',
+
     }.each do |key, value|
         account = create_account
         account.image = image_url(['logos', key]).open
-        account.company = create_company(name: value)
+        account.company = create_company(value)
         account.save
     end
 end
@@ -26,6 +35,7 @@ end
 def create_account
     username = Faker::Internet.username
     Account.create(
+        password: 'testtest',
         email: "#{username}@gmail.com",
         url: "#{username}.com",
         description: Faker::Lorem.paragraph(sentence_count: rand(1..5)),

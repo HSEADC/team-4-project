@@ -1,0 +1,27 @@
+@import "colors";
+
+.form {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-left: 12.25rem; // существующий отступ + отступ формы
+
+  .input, select {
+    color: $grey2;
+  }
+}
+
+.base_info {
+  display: flex;
+  flex-direction: column;
+
+  .h1 {
+    width: 100%;
+    background-color: transparent;
+    padding: unset;
+  }
+
+  textarea {
+    width: 47.5rem;
+  }
+}

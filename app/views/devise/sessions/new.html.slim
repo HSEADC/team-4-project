@@ -1,13 +1,22 @@
 = form_for(resource, as: resource_name, url: session_path(resource_name), html: { class: "device" }) do |f|
-  img.avatar
+  = image_tag "ava.svg", class: 'avatar'
   .height-1rem
 
   h2.grey1.text-center Вход
+  .height-xxs
+
+  = link_to 'Регистрация', new_account_registration_path, class: 'button grey2 text-center'
   .height-l
+
   = f.email_field :email, autofocus: true, autocomplete: "email", class: "input", placeholder: "Email"
   .height-m
   = f.password_field :password, autofocus: true, autocomplete: "current-password", class: "input", placeholder: "Email"
   .height-m
-  = f.submit "Log in", class: "s_button green_button"
+  .check_box
+    = check_box_tag 'receive_email', 'yes', true, class: 'box'
+    .width-1rem
+    label.button.grey1 for="checkbox" Запомнить меня
 
-//  = render "devise/shared/links"
+  .height-m
+
+  = f.submit "Вход", class: "s_button green_button"

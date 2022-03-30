@@ -3,8 +3,12 @@ class Account < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-    TYPE = %i[user company]
-    mount_uploader :image, ImageUploader
-    has_one :company
-    has_one :user
+
+  TYPE = %i[user company]
+  mount_uploader :image, ImageUploader
+  has_one :company
+  has_one :user
+  has_many :vacancies
+
+  accepts_nested_attributes_for :user, :company
 end

@@ -1,23 +1,29 @@
-.card.card-vacancy.grey2.width-20rem
+= link_to vacancy_path(vacancy.id), class: "card card-vacancy grey2 width-20rem" do
     .logo
-        img
+        - if vacancy.account.image.present?
+          = image_tag(vacancy.account.image.url)
+        - else
+          img.avatar
         .width-xs
-        .button МТС
+        - if vacancy.account.company.present?
+          .button #{ vacancy.account.company.name }
+        - if vacancy.account.user.present?
+          .button #{ vacancy.account.user.name }
 
     .height-xs
 
-    h3.grey1. UX/UI дизайнер и ресёрчер
+    h3.grey1 #{ vacancy&.title }
     .info
-        p.footnote Стажировка
-        p.footnote
-            span •
-            | Москва
+        p.footnote #{ Vacancy::OCCUPATION_TYPE[vacancy&.occupation_type&.to_sym] }
+        - vacancy&.cities&.each do |city|
+          p.footnote
+              span •
+              | #{ city&.name }
 
     .height-s
-    p 40 000 ₽ / мес
+    p #{ number_to_currency(vacancy&.salary, delimiter: " ", precision: 0, unit: "₽ / мес", format: "%n %u") }
 
     .height-xs
     .tags
-        .button.s_button.fit-content.green_button Фултайм
+        .button.s_button.fit-content.green_button #{ Vacancy::GRADE[vacancy&.grade&.to_sym] }
         .width-xs
-        .button.s_button.fit-content.green_button На 3 месяца

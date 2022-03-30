@@ -6,8 +6,7 @@ $space: calc(6rem); // расстояние между фильтром и ва�
 
 // INDEX
 .banner {
-  width: inherit;
-  background-color: red;
+  width: inherit;  
   height: 16.5rem;
   @include border-radius;
   margin-bottom: 3.5rem;

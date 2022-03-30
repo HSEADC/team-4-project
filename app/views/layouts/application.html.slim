@@ -24,16 +24,20 @@ html
         .width-2rem
         = link_to 'MAIN', root_path , class: "h4 grey3 main"
         .width-2rem
-        = link_to 'ME', vacancies_path, class: "h4 grey3 me"
+        = link_to 'ME', root_path , class: "h4 grey3 me"
         .width-2rem
         = link_to 'YOURNAME', vacancies_path, class: "h4 grey3 yourname"
         .width-2rem
         = link_to 'BOOKMARKS', vacancies_path, class: "h4 grey3 bookmarks"
 
       .menu_items_right
-        = link_to 'Добавить вакансию', new_vacancy_path, class: 'menu_item s_button black_button fit-content'
-        .width-1rem
-        = link_to 'Вход', new_account_session_path, class: 'menu_item s_button black_button fit-content'
+        - if account_signed_in?
+          = link_to 'Добавить вакансию', new_vacancy_path, class: 'menu_item s_button black_button fit-content'
+          .width-1rem
+          = link_to 'Выход', destroy_account_session_path, method: :delete, class: 'menu_item s_button black_button fit-content'
+        - else
+          .width-1rem
+          = link_to 'Вход', new_account_session_path, class: 'menu_item s_button black_button fit-content'
 
     - if container_name = controller_name.in?(%w[sessions registrations passwords]) ? "device_container" : "container"
 
