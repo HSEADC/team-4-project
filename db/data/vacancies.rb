@@ -1,7 +1,7 @@
 def create_vacancies
     10.times do
         username = Faker::Internet.username
-        Vacancy.create(
+        vacancy = Vacancy.create(
             status: Vacancy::STATUS.keys.sample,
             title: Faker::Job.title,
             description: Faker::Lorem.paragraph(sentence_count: rand(2..5)),

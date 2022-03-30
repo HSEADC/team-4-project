@@ -21,7 +21,7 @@
               | #{ city&.name }
 
     .height-s
-    p #{ number_to_currency(vacancy&.salary, delimiter: " ", precision: 0, unit: "₽ / мес", format: "%n %u") }
+    p.grey1 #{ number_to_currency(vacancy&.salary, delimiter: " ", precision: 0, unit: "₽ / мес", format: "%n %u") }
 
     .height-xs
     .tags

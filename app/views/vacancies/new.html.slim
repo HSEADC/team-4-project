@@ -95,6 +95,9 @@
 
     .height-xxs
 
+    = f.fields_for :city_vacancies, @vacancy.city_vacancies.new  do |subform|
+      = subform.hidden_field :vacancy_id, value: f.object.id
+      = subform.select(:city_id, options_for_select(City.all.pluck(:name, :id)), { include_blank: "" }, { class: 'input' })
 
     .height-l
 
@@ -104,7 +107,3 @@
       = f.submit "Опубликовать", class: 's_button green_button fit-content'
 
 .height-4rem
-
-//  = f.fields_for :city_vacancies, @vacancy.city_vacancies.new  do |subform|
-//    = subform.hidden_field :vacancy_id, value: f.object.id
-//    = subform.select(:city_id, options_for_select(City.all.pluck(:name, :id)), { include_blank: "" }, { class: 'input' })

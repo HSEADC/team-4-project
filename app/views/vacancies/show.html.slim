@@ -1,1 +1,87 @@
-h2.grey1 #{ @vacancy.title }
+.vacancy
+  .base_info.width-48rem
+    .footnote ADC Space — Стажировки
+    .height-1rem
+    h1.grey1 #{ @vacancy.title }
+    .height-1rem
+    .logo
+        - if @vacancy.account.image.present?
+          = image_tag(@vacancy.account.image.url)
+        - else
+          img.avatar
+        .width-xs
+        - if @vacancy.account.company.present?
+          .button #{ @vacancy.account.company.name }
+        - if @vacancy.account.user.present?
+          .button #{ @vacancy.account.user.name }
+
+    .height-2rem
+    .card
+        h2.grey1 О стажировке
+        p #{ @vacancy.description }
+    .height-2rem
+
+    .card
+        h2.grey1 О компании
+        p #{ @vacancy.description }
+    .height-2rem
+
+    .card
+        h2.grey1 Критерии кандидата
+        - @vacancy.skills.pluck(:name).each do |skill |
+          p #{ skill }
+
+  .width-2rem
+
+  .properties.width-huge.card
+    .footnote.grey2 Формат*
+    .height-xxs
+    h3.grey1.inline
+      i.bus
+      .width-xxs
+      |
+        #{ Vacancy::REMOTE[@vacancy.remote] }
+
+    .height-xxs
+
+    .height-l
+
+    .footnote.grey2 График*
+    .height-xxs
+
+    h3.grey1.inline
+      i.clock
+      .width-xxs
+      |
+        #{ Vacancy::OCCUPATION_TYPE[@vacancy.occupation_type.to_sym]}
+
+    .height-xxs
+
+
+    .height-l
+
+    .footnote.grey2 Город*
+    .height-xxs
+    - @vacancy.cities.pluck(:name).each do |city|
+      h3.grey1.inline
+        i.location
+        .width-xxs
+
+        |
+          #{ city }
+
+    .height-l
+
+
+    .footnote.grey2 Зарплата*
+    .height-xxs
+    h3.grey1.inline
+      i.money
+      .width-xxs
+      |
+        #{ @vacancy.salary}
+
+
+    .height-l
+
+    .s_button.green_button.width-20rem Откликнуться

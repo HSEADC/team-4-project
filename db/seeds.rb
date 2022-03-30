@@ -14,6 +14,7 @@ end
 
 create_accounts
 create_cities
-create_city_vacancies
 create_skills
 create_vacancies
+create_city_vacancies
+create_skill_vacancies

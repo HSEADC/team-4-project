@@ -2,6 +2,7 @@ class Vacancy < ApplicationRecord
     STATUS = { active: 'актуально', inactive: 'не актуально' }.freeze
     GRADE = { intern: 'стажер', junior: 'джуниор', middle: 'миддл', senior: 'сеньор'}.freeze
     OCCUPATION_TYPE = { full_time: 'полная занятость', part_time: 'частичная занятость', temporary: 'временная', internship: 'стажировка', project: 'проект' }.freeze
+    REMOTE = { true => "Удаленная", false => "Офис" }
 
     belongs_to :account
     has_many :city_vacancies, class_name: 'CityVacancy'
