@@ -58,3 +58,25 @@
   display: flex;
   flex-direction: column;
 }
+
+.card-me-about {
+  width: auto;
+  align-items: center;
+  @include border-radius;
+  background-color: $bg-secondary;
+  padding: 1.5rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-me-about-social {
+  width: auto;
+  align-items: center;
+  justify-content: space-between;
+  @include border-radius;
+  background-color: $bg-secondary;
+  padding: 1.5rem 1.25rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}

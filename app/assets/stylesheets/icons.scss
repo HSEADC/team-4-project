@@ -12,7 +12,12 @@ i { display: block;
 .bus { @include icon("bus.svg", 1.5rem); }
 .money { @include icon("money.svg", 1.5rem); }
 .bag { @include icon("bag.svg", 1.5rem); }
-.behance { @include icon("behance.svg", 1.5rem); }
+.behance { @include icon("behance.svg", 4rem); }
+.dribble { @include icon("dribble.svg", 4rem); }
+.linkedln { @include icon("linkedln.svg", 4rem); }
+.twitter { @include icon("twitter.svg", 4rem); }
+.vk { @include icon("vk.svg", 4rem); }
+.youtube { @include icon("youtube.svg", 4rem); }
 .bookmark { @include icon("bookmark.svg", 1.5rem); }
 .brush { @include icon("brush.svg", 1.5rem); }
 .calendar { @include icon("calendar.svg", 1.5rem); }
@@ -22,6 +27,6 @@ i { display: block;
 .location { @include icon("location.svg",  1.5rem); }
 .mail { @include icon("mail.svg", 1.5rem); }
 .school { @include icon("school.svg", 1.5rem); }
-.telegram { @include icon("telegram.svg", 1.5rem); }
+.telegram { @include icon("telegram.svg", 4rem); }
 .uploads { @include icon("uploads.svg", 1.5rem); }
 .work { @include icon("work.svg", 1.5rem); }

@@ -24,7 +24,12 @@ html
         .width-2rem
         = link_to 'MAIN', root_path , class: "h4 grey3 main"
         .width-2rem
-        = link_to 'ME', root_path , class: "h4 grey3 me"
+        - if account_signed_in? && current_account.user.present?
+          = link_to 'ME', current_account.user , class: "h4 grey3 me"
+        - else
+          = link_to 'ME', root_path , class: "h4 grey3 me"
+        .width-2rem
+        = link_to 'EVENTS', events_path , class: "h4 grey3 main"
         .width-2rem
         = link_to 'YOURNAME', vacancies_path, class: "h4 grey3 yourname"
         .width-2rem

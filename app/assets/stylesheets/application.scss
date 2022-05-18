@@ -37,7 +37,6 @@ html {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-
   margin: 0 auto;
   width: calc(100vw - 8rem);
   min-height: calc(100vh - #{$menubar-height} - #{$footer-height});

@@ -20,24 +20,35 @@
   @include button($padding-w, $padding-w);
   @include h2;
   @include font_settings(1.375rem, 2rem);
+  padding: 0.5rem 1rem;
 }
 
 .s_button {
   @include button($padding-w, $padding-h);
   @include h2;
   @include font_settings(0.9375rem, 1.3125rem);
+  padding: 0.5rem 1rem;
 }
 
 .green_button {
   @include colors($green, $black);
   @include hover_colors($hover-green, $black);
   @include active_colors($active-green, $black);
+  padding: 0.5rem 1rem;
 }
 
 .black_button {
   @include colors($bg-secondary, $grey1);
   @include hover_colors($bg-secondary, $grey2);
   @include disabled_colors($bg-secondary, $grey3);
+  padding: 0.5rem 1rem;
+}
+
+.link_button {
+  @include colors($bg-secondary, $green);
+  @include hover_colors($bg-secondary, $hover-green);
+  @include disabled_colors($bg-secondary, $grey3);
+  padding: 0.5rem 1rem;
 }
 
 // .horizontal {

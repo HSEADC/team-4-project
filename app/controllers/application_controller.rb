@@ -21,4 +21,8 @@ class ApplicationController < ActionController::Base
       ]
     ])
   end
+
+  def current_user
+    @current_user ||= current_account.user if account_signed_in?
+  end
 end

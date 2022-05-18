@@ -40,10 +40,19 @@ def create_account
         url: "#{username}.com",
         description: Faker::Lorem.paragraph(sentence_count: rand(1..5)),
         contacts: {
-            behance: "behance.net/#{username}",
-            insta: "@#{username}",
-            tg: "@#{username}",
-            vk: "vk.com/#{username}",
+            behance: "https://behance.net/#{username}",
+            insta: "https://instagram.com/@#{username}",
+            tg: "https://t.me/@#{username}",
+            vk: "https://vk.com/#{username}",
+        }.to_json,
+        socials: {
+          vk: 'https:/vk.com/id1',
+          telegram: 'https://t.me/@random',
+          youtube: 'https://youtube.com',
+          behance: 'https://behance.com/',
+          dribble: 'https://dribble.com',
+          linkedln: 'https://linkedln.com',
+          twitter: 'https://twitter.com',
         }
     )
 end

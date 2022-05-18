@@ -1,0 +1,38 @@
+.card-me-about.width-xxxxl
+
+  = image_tag "ava.svg", class: 'avatar'
+  .height-1rem
+
+  h2.grey1 = @user.full_name
+
+  p.grey2 = @account.url
+
+  - parsed_contacts(@account.contacts).each do |app, link|
+    .height-1rem
+
+    .l_button.link_button.width-20rem
+      = link_to "#{app}", link, target: '_blank', class: "#{app}-social-link"
+
+.height-l
+
+.card-me-about-social.width-21rem
+ a href="#{@account.behance}" target="_blank"
+  i.behance
+ a href="#{@account.telegram}" target="_blank"
+  i.telegram
+ a href="#{@account.dribble}" target="_blank"
+  i.dribble
+ a href="#{@account.vk}" target="_blank"
+  i.vk
+ a href="#{@account.youtube}" target="_blank"
+  i.youtube
+ //i.twitter
+ //i.linkedln
+
+.height-1rem
+
+
+- if @current_user.present? && @current_user.id == @user.id
+
+
+  .l_button.link_button.width-21rem = link_to 'создать проект', new_post_path

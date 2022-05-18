@@ -1,0 +1,40 @@
+
+- @posts.each do |post|
+  .card-image-h2-me.width-xxxxl
+    - if post.image.present?
+      .img
+        = image_tag post.image.url
+    - if post.title.present?
+      h2.grey1 = post.title
+      .height-0.5rem
+    - if post.text.present?
+      p = post.text
+    - if @current_user == post.user
+      = link_to 'удалить', post, method: :delete
+
+
+
+.card-image-h2-me.width-xxxxl
+  .img
+
+  h2.grey1 Blopp
+  .height-0.5rem
+  p Мой проект «Красная пыль» получил ленточку в awwards
+
+
+.card-text-me.width-xxxxl
+  h2.grey1 Привет!
+  p Ищу ребят для HSE ADC, рарабатываем огненный курс!
+
+  height-1rem
+
+  h2.grey1 Навыки
+  .height-0.5rem
+  p UX/UI
+  p UX/UI
+
+
+//.card.width-xxxxl
+    //= image_tag "banner.svg", class: 'banner'
+    //h2 Урааа, авввардз!
+    //p Мой проект «Красная пыль» получил ленточку в awwards

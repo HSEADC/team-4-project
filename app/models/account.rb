@@ -10,5 +10,8 @@ class Account < ApplicationRecord
   has_one :user
   has_many :vacancies
 
+  store_accessor :socials,
+    :vk, :telegram, :dribble, :behance, :youtube, :twitter, :linkedln
+
   accepts_nested_attributes_for :user, :company
 end
