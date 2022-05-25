@@ -7,11 +7,12 @@
 
   p.grey2 = @account.url
 
-  - parsed_contacts(@account.contacts).each do |app, link|
-    .height-1rem
+  - @account.contacts.each do |app, link|
+    - if link.present?
+      .height-1rem
 
-    .l_button.link_button.width-20rem
-      = link_to "#{app}", link, target: '_blank', class: "#{app}-social-link"
+      .l_button.link_button.width-20rem
+        = link_to "#{app}", link, target: '_blank', class: "#{app}-social-link"
 
 .height-l
 
@@ -36,3 +37,4 @@
 
 
   .l_button.link_button.width-21rem = link_to 'создать проект', new_post_path
+  .l_button.link_button.width-21rem = link_to 'изменить данные о себе', edit_user_path(@current_user)

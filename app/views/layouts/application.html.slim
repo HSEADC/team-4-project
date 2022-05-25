@@ -51,6 +51,8 @@ html
         = yield
     - else
       .container
+        = flash.each do |type, msg|
+          div = msg
         = yield
       footer.footer
         p © ADC (2022)

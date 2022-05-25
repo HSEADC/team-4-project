@@ -2,6 +2,8 @@ class User < ApplicationRecord
     belongs_to :account
     has_many :posts
 
+    accepts_nested_attributes_for :account
+
     def full_name
       "#{name} #{surname}"
     end
