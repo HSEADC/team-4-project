@@ -30,4 +30,14 @@ $vacancy-card-w: $size-20rem;
 }
 
 .inline { display: inline-flex; }
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.center {
+  align-items: center;
+}
+
 .text-center { text-align: center; }

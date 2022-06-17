@@ -1,64 +1,77 @@
+= javascript_pack_tag 'user_form_pack'
+
 .height-4rem
-= form_for @user, url: { action: "update" }, authenticity_token: false, html: { class: 'form' } do |f|
+
+.form.user_form data-props=@user_json
   .base_info
-    h3.grey1 Имя
-    = f.text_field :name, class: "input h1 grey1", placeholder: "Имя", autocomplete: 'off'
 
-    h3.grey1 Фамилия
-    = f.text_field :surname, class: "input h1 grey1", placeholder: "Фамилия", autocomplete: 'off'
-
-    .height-l
-
-    .footnote.grey1 Социальные сети
-
-    .height-xxs
-
-    = f.fields_for :account, @user.account do |subform|
-      = subform.fields :socials, model: OpenStruct.new(subform.object.socials) do |field|
-        h3.grey1 VK
-        = field.text_field :vk
-
-        h3.grey1 Telegram
-        = field.text_field :telegram
-
-        h3.grey1 Dribble
-        = field.text_field :dribble
-
-        h3.grey1 Behance
-        = field.text_field :behance
-
-        h3.grey1 Youtube
-        = field.text_field :youtube
-
-        h3.grey1 Twitter
-        = field.text_field :twitter
-
-        h3.grey1 Linkedln
-        = field.text_field :linkedln
-
-    .height-l
-
-    .footnote.grey1 Социальные сети
-
-    .height-xxs
-
-    = f.fields_for :account, @user.account do |subform|
-      = subform.fields :contacts, model: OpenStruct.new(subform.object.contacts) do |field|
-        h3.grey1 Link #1
-        = field.text_field :link_1
-
-        h3.grey1 Link #2
-        = field.text_field :link_2
-
-        h3.grey1 Link #3
-        = field.text_field :link_3
-
-
-    .height-l
-
-    .buttons.inline
-      = link_to "Назад", root_path, class: "s_button black_button fit-content"
-      .width-2rem
-      = f.submit "Опубликовать", class: 's_button green_button fit-content'
-
-.height-4rem
+//.height-4rem
+//= form_for @user, url: { action: "update" }, authenticity_token: false, html: { class: 'form' } do |f|
+//  .base_info
+//    h3.grey1 Имя
+//    = f.text_field :name, class: "input h1 grey1", placeholder: "Имя", autocomplete: 'off'
+//
+//    h3.grey1 Фамилия
+//    = f.text_field :surname, class: "input h1 grey1", placeholder: "Фамилия", autocomplete: 'off'
+//
+//    .height-l
+//
+//    .footnote.grey1 Социальные сети
+//
+//    .height-xxs
+//
+//    = f.fields_for :account, @user.account do |subform|
+//      = subform.fields :socials, model: OpenStruct.new(subform.object.socials) do |field|
+//        h3.grey1 VK
+//        = field.text_field :vk
+//
+//        h3.grey1 Telegram
+//        = field.text_field :telegram
+//
+//        h3.grey1 Dribble
+//        = field.text_field :dribble
+//
+//        h3.grey1 Behance
+//        = field.text_field :behance
+//
+//        h3.grey1 Youtube
+//        = field.text_field :youtube
+//
+//        h3.grey1 Twitter
+//        = field.text_field :twitter
+//
+//        h3.grey1 Linkedln
+//        = field.text_field :linkedln
+//
+//    .height-l
+//
+//    .footnote.grey1 Аккаунт
+//
+//    .height-xxs
+//
+//    = f.fields_for :account, @user.account do |subform|
+//      .footnote.grey1 Изображение профиля
+//      = subform.file_field :image, class: "input"
+//
+//      .footnote.grey1 Ссылки
+//
+//      = subform.fields :contacts, model: OpenStruct.new(subform.object.contacts) do |field|
+//        h3.grey1 Link #1
+//        = field.text_field :link_1
+//
+//        h3.grey1 Link #2
+//        = field.text_field :link_2
+//
+//        h3.grey1 Link #3
+//        = field.text_field :link_3
+//
+//
+//    .height-l
+//
+//    .buttons.inline
+//      = link_to "Назад", root_path, class: "s_button black_button fit-content"
+//      .width-2rem
+//      = f.submit "Опубликовать", class: 's_button green_button fit-content'
+//
+//.height-4rem
+//

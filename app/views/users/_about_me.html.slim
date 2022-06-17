@@ -1,34 +1,38 @@
 .card-me-about.width-xxxxl
 
-  = image_tag "ava.svg", class: 'avatar'
+  = image_tag (@account.image.url || "ava.svg"), class: 'avatar'
   .height-1rem
 
   h2.grey1 = @user.full_name
 
   p.grey2 = @account.url
 
-  - @account.contacts.each do |app, link|
+  - @account.contacts.each do |_app, link|
     - if link.present?
       .height-1rem
+      - host = URI(link).host
 
       .l_button.link_button.width-20rem
-        = link_to "#{app}", link, target: '_blank', class: "#{app}-social-link"
+        = link_to host, link, target: '_blank', class: "#{_app}-social-link"
 
 .height-l
 
 .card-me-about-social.width-21rem
- a href="#{@account.behance}" target="_blank"
-  i.behance
- a href="#{@account.telegram}" target="_blank"
-  i.telegram
- a href="#{@account.dribble}" target="_blank"
-  i.dribble
- a href="#{@account.vk}" target="_blank"
-  i.vk
- a href="#{@account.youtube}" target="_blank"
-  i.youtube
- //i.twitter
- //i.linkedln
+  - unless @account.behance.blank?
+    a href="#{@account.behance}" target="_blank"
+      i.behance
+  - unless @account.telegram.blank?
+    a href="#{@account.telegram}" target="_blank"
+      i.telegram
+  - unless @account.dribble.blank?
+    a href="#{@account.dribble}" target="_blank"
+      i.dribble
+  - unless @account.vk.blank?
+    a href="#{@account.vk}" target="_blank"
+      i.vk
+  - unless @account.youtube.blank?
+    a href="#{@account.youtube}" target="_blank"
+      i.youtube
 
 .height-1rem
 

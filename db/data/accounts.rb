@@ -44,7 +44,7 @@ def create_account
             insta: "https://instagram.com/@#{username}",
             tg: "https://t.me/@#{username}",
             vk: "https://vk.com/#{username}",
-        }.to_json,
+        },
         socials: {
           vk: 'https:/vk.com/id1',
           telegram: 'https://t.me/@random',

@@ -8,13 +8,13 @@
 
   display: inline-block;
   box-sizing: border-box;
-  background-color: $bg-secondary;
+  background-color: $back;
 
   height: 2.5rem;
   padding: $padding-h $padding-w;
 
-  border: none;
-  color: $grey1;
+  border: 2px $bg-primary;
+  color: $bg-primary;
 
   width: 16rem;
 

@@ -25,8 +25,10 @@ $grey3: #EBEBF533;
 // Background
 $bg-primary: #B0AFD224;
 $bg-secondary: #B0AFD217;
+$back: #060606;
 .bg-primary { color: $bg-primary !important; }
 .bg-secondary { color: $bg-secondary !important; }
+.back { color: $back !important; }
 
 // IXINS
 @mixin colors($background, $color) {
@@ -40,13 +42,13 @@ $bg-secondary: #B0AFD217;
     }
 }
 
-@mixin active_colors($background, $color) {    
+@mixin active_colors($background, $color) {
     &:active {
         @include colors($background, $color);
     }
 }
 
-@mixin disabled_colors($background, $color) {    
+@mixin disabled_colors($background, $color) {
     &:disabled {
         @include colors($background, $color);
     }

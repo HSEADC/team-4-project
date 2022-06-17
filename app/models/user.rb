@@ -23,4 +23,8 @@ class User < ApplicationRecord
     def linkedln
       JSON.parse(account.contacts.to_s)&.dig('linkedln')
     end
+
+    def to_param
+      name
+    end
 end
