@@ -1,6 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import $ from "jquery"
+import {useState} from 'react';
 
 class UserInfo extends React.Component {
 	constructor(props) {
@@ -9,6 +10,17 @@ class UserInfo extends React.Component {
     this.handleNameChange = this.handleNameChange.bind(this)
     this.handleSurnameChange = this.handleSurnameChange.bind(this)
 		this.handleEmailChange = this.handleEmailChange.bind(this)
+
+		this.handleLink1Change = this.handleLink1Change.bind(this)
+		this.handleLink2Change = this.handleLink2Change.bind(this)
+		this.handleLink3Change = this.handleLink3Change.bind(this)
+		this.handleBehanceChange = this.handleBehanceChange.bind(this)
+		this.handleDribbleChange = this.handleDribbleChange.bind(this)
+		this.handleTelegramChange = this.handleTelegramChange.bind(this)
+		this.handleLinkedlnChange = this.handleLinkedlnChange.bind(this)
+		this.handleVkChange = this.handleVkChange.bind(this)
+		this.handleYoutubeChange = this.handleYoutubeChange.bind(this)
+		this.handleTwitterChange = this.handleTwitterChange.bind(this)
 	}
 
 	componentDidMount() {
@@ -31,6 +43,46 @@ class UserInfo extends React.Component {
 		this.props.handleEmailChange(e.target.value)
 	}
 
+	handleLink1Change(e) {
+		this.props.handleLink1Change(e.target.value)
+	}
+
+	handleLink2Change(e) {
+		this.props.handleLink2Change(e.target.value)
+	}
+
+	handleLink3Change(e) {
+		this.props.handleLink3Change(e.target.value)
+	}
+
+	handleBehanceChange(e) {
+		this.props.handleBehanceChange(e.target.value)
+	}
+
+	handleDribbleChange(e) {
+		this.props.handleDribbleChange(e.target.value)
+	}
+
+	handleTelegramChange(e) {
+		this.props.handleTelegramChange(e.target.value)
+	}
+
+	handleLinkedlnChange(e) {
+		this.props.handleLinkedlnChange(e.target.value)
+	}
+
+	handleVkChange(e) {
+		this.props.handleVkChange(e.target.value)
+	}
+
+	handleYoutubeChange(e) {
+		this.props.handleYoutubeChange(e.target.value)
+	}
+
+	handleTwitterChange(e) {
+		this.props.handleTwitterChange(e.target.value)
+	}
+
 	render() {
 		return (
 			<div className='registration_container'>
@@ -43,7 +95,7 @@ class UserInfo extends React.Component {
 					<div className='width-s'></div>
 					<div className='s_button green_button fit-content'>Загрузить фото</div>
 				</div>
-				
+
 				<div className='height-l'></div>
 
 				<div className='label_default_input column'>
@@ -54,7 +106,7 @@ class UserInfo extends React.Component {
             name="name"
             value={ this.props.user.name }
             onChange={ this.handleNameChange }
-            className="input button grey1"
+            className="input grey1"
             />
         </div>
 
@@ -65,8 +117,8 @@ class UserInfo extends React.Component {
             placeholder="Фамилия"
             name="surname"
             value={ this.props.user.surname }
-            onChange={ this.handleRoleChange }
-            className="input button grey1"
+            onChange={ this.handleSurnameChange }
+            className="input grey1"
             />
         </div>
 
@@ -74,7 +126,7 @@ class UserInfo extends React.Component {
 				<label className="grey2 p">Email</label>
 						<input
 							type="text"
-							placeholder="Email"
+							placeholder={ this.props.user.email }
 							name="email"
 							value={ this.props.user.email }
 							onChange={ this.handleEmailChange }
@@ -84,6 +136,9 @@ class UserInfo extends React.Component {
 
 				<div className='height-4rem'></div>
 
+
+
+
 				<label className="grey1 h2">Ссылки</label>
 
 				<div className='height-l'></div>
@@ -92,9 +147,26 @@ class UserInfo extends React.Component {
 					<input
 							type="text"
 							placeholder="https://"
-							name="email"
-							value={ this.props.user.email }
-							onChange={ this.handleEmailChange }
+							name="link1"
+							defaultValue={ this.props.user.contacts.link1 }
+							onChange={ this.handleLink1Change }
+							className="input button grey1"
+						/>
+
+					<label>Ссылка</label>
+				</div>
+
+
+
+				<div className='height-xl'></div>
+
+				<div className='label_default_input'>
+					<input
+							type="text"
+							placeholder="https://"
+							name="link_2"
+							value={ this.props.user.link2 }
+							onChange={ this.handleLink2Change }
 							className="input button grey1"
 						/>
 
@@ -107,24 +179,9 @@ class UserInfo extends React.Component {
 					<input
 							type="text"
 							placeholder="https://"
-							name="email"
-							value={ this.props.user.email }
-							onChange={ this.handleEmailChange }
-							className="input button grey1"
-						/>
-
-					<label>Ссылка</label>
-				</div>
-
-				<div className='height-xl'></div>
-
-				<div className='label_default_input'>
-					<input
-							type="text"
-							placeholder="https://"
-							name="email"
-							value={ this.props.user.email }
-							onChange={ this.handleEmailChange }
+							name="link_3"
+							value={ this.props.user.link3 }
+							onChange={ this.handleLink3Change }
 							className="input button grey1"
 						/>
 
@@ -145,8 +202,8 @@ class UserInfo extends React.Component {
 								type="text"
 								placeholder="https://"
 								name="behance"
-								value={ this.props.user.email }
-								// onChange={ this.handleEmailChange }
+								value={ this.props.user.behance }
+								onChange={ this.handleBehanceChange }
 								className="input button grey1"
 							/>
 					</div>
@@ -160,8 +217,8 @@ class UserInfo extends React.Component {
 						type="text"
 						placeholder="https://"
 						name="dribble"
-						value={ this.props.user.email }
-						// onChange={ this.handleEmailChange }
+						value={ this.props.user.dribble }
+						onChange={ this.handleDribbleChange }
 						className="input button grey1"
 						/>
 					</div>
@@ -175,8 +232,8 @@ class UserInfo extends React.Component {
 					type="text"
 					placeholder="https://"
 					name="telegram"
-					value={ this.props.user.email }
-					// onChange={ this.handleEmailChange }
+					value={ this.props.user.telegram }
+					onChange={ this.handleTelegramChange }
 					className="input button grey1"
 					/>
 					</div>
@@ -190,8 +247,8 @@ class UserInfo extends React.Component {
 							type="text"
 							placeholder="https://"
 							name="linkedln"
-							value={ this.props.user.email }
-							// onChange={ this.handleEmailChange }
+							value={ this.props.user.linkedln }
+							onChange={ this.handleLinkedlnChange }
 							className="input button grey1"
 						/>
 					</div>
@@ -205,8 +262,8 @@ class UserInfo extends React.Component {
 						type="text"
 						placeholder="https://"
 						name="vk"
-						value={ this.props.user.email }
-						// onChange={ this.handleEmailChange }
+						value={ this.props.user.vk }
+						onChange={ this.handleVkChange }
 						className="input button grey1"
 					/>
 					</div>
@@ -220,8 +277,8 @@ class UserInfo extends React.Component {
 						type="text"
 						placeholder="https://"
 						name="youtube"
-						value={ this.props.user.email }
-						// onChange={ this.handleEmailChange }
+						value={ this.props.user.youtube }
+						onChange={ this.handleYoutubeChange }
 						className="input button grey1"
 					/>
 					</div>
@@ -235,8 +292,8 @@ class UserInfo extends React.Component {
 							type="text"
 							placeholder="https://"
 							name="twitter"
-							value={ this.props.user.email }
-							// onChange={ this.handleEmailChange }
+							value={ this.props.user.twitter }
+							 onChange={ this.handleTwitterChange }
 							className="input button grey1"
 						/>
 

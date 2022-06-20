@@ -4,6 +4,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find_by(name: params[:name])
     @account = @user.account
+
     @posts = @user.posts
     @current_user = current_account.user
   end
@@ -13,24 +14,7 @@ class UsersController < ApplicationController
   end
 
   def update
-    if user.update(user_params)
-      redirect_to current_user
-    else
-      flash[:error] = user.errors.full_messages.join(', ')
-      redirect_to edit_user_path(current_user)
-    end
-  end
-
-
-  def update
-    respond_to do |format|
-      if @user.update(user_params)
-        format.json
-      else
-        format.html { render :edit }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
-      end
-    end
+    user.update(user_params.except(:email)) && user.account.update(email: user_params[:email])
   end
 
   private
@@ -40,7 +24,7 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit!
+    params.required(:user).permit!
   end
 
   def authorize_user

@@ -7,13 +7,16 @@
 
   p.grey2 = @account.url
 
-  - @account.contacts.each do |_app, link|
-    - if link.present?
-      .height-1rem
-      - host = URI(link).host
 
-      .l_button.link_button.width-20rem
-        = link_to host, link, target: '_blank', class: "#{_app}-social-link"
+
+
+  //- @account.contacts.each do |_app, link|
+  //  - if link.present?
+  //    .height-1rem
+  //    - host = URI(link).host
+
+  //    .l_button.link_button.width-20rem
+  //      = link_to host, link, target: '_blank', class: "#{_app}-social-link"
 
 .height-l
 

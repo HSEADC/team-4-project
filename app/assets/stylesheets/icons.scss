@@ -30,6 +30,7 @@ i { display: block;
 .telegram { @include icon("telegram.svg", 4rem); }
 .uploads { @include icon("uploads.svg", 1.5rem); }
 .work { @include icon("work.svg", 1.5rem); }
+.imagePlaceholder { @include icon("imagePlaceholder.svg", 4rem); }
 
 .behance-small { @include icon("behance-small.svg", 3rem); }
 .dribble-small { @include icon("dribble-small.svg", 3rem); }

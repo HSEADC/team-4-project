@@ -13,7 +13,7 @@
   height: 2.5rem;
   padding: $padding-h $padding-w;
 
-  border: 2px $bg-primary;
+  border: 2px solid $bg-primary;
   color: $bg-primary;
 
   width: 16rem;
@@ -70,6 +70,28 @@ textarea {
 
     @include hover-cursor;
   }
+}
+
+.post_types {
+  display: flex;
+  flex-direction: row;
+}
+
+.post_type {
+  display: flex;
+  flex-direction: column;
+}
+
+.post_card_info {
+  display: flex;
+  flex-direction: column;
+  background-color: $bg-primary;
+}
+
+.post_card_input {
+  display: flex;
+  flex-direction: column;
+  background-color: $bg-secondary;
 }
 
 // IMAGE UPLOADER

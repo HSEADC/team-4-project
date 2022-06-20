@@ -1,16 +1,20 @@
 class UserSerializer < ActiveModel::Serializer
   attributes :id,
              :name,
-             :surname,
-             :full_name
-             # :email
+             :email,
+             :contacts,
+             :socials
 
-  def full_name
-    object.name + ' ' + object.surname
+
+  def email
+    object.account.email
   end
 
-  # def avatar
-  #   return rails_blob_path(object.avatar, only_path: true) if object.avatar.present?
-  #   ''
-  # end
+  def contacts
+    object.account.contacts || {}
+  end
+
+  def socials
+    object.account.socials || {}
+  end
 end

@@ -1,37 +1,47 @@
-.height-4rem
-= form_for @post, url: { action: "create" }, authenticity_token: false, html: { class: 'form' } do |f|
-  .base_info
-    = f.text_field :title, class: "input h1 grey1", placeholder: "Заголовок", autocomplete: 'off'
+= javascript_pack_tag 'event_pack'
 
-    .height-2rem
-    h3.grey1 О проекте*
-
-    .height-1rem
+.form.user_form
 
 
-    = f.text_area :text, class: "input", placeholder: "Введите текст"
 
-    .height-2rem
 
-    h3.grey1 Ссылка*
+//.height-4rem
 
-    .height-1rem
 
-    = f.text_area :url, class: "input", placeholder: "http://"
 
-    .height-2rem
+//= form_for @post, url: { action: "create" }, authenticity_token: false, html: { class: 'form' } do |f|
+//  .base_info
+//    = f.text_field :title, class: "input h1 grey1", placeholder: "Заголовок", autocomplete: 'off'
 
-    h3.grey1 Изображение*
+//    .height-2rem
+//    h3.grey1 О проекте*
 
-    .height-1rem
+//    .height-1rem
 
-    = f.file_field :image, class: "input"
 
-    .height-l
+//    = f.text_area :text, class: "input", placeholder: "Введите текст"
 
-    .buttons.inline
-      = link_to "Назад", root_path, class: "s_button black_button fit-content"
-      .width-2rem
-      = f.submit "Опубликовать", class: 's_button green_button fit-content'
+//    .height-2rem
 
-.height-4rem
+//    h3.grey1 Ссылка*
+
+//    .height-1rem
+
+//    = f.text_area :url, class: "input", placeholder: "http://"
+
+//    .height-2rem
+
+//    h3.grey1 Изображение*
+
+//    .height-1rem
+
+//    = f.file_field :image, class: "input"
+
+//    .height-l
+
+//    .buttons.inline
+//      = link_to "Назад", root_path, class: "s_button black_button fit-content"
+//      .width-2rem
+//      = f.submit "Опубликовать", class: 's_button green_button fit-content'
+
+//.height-4rem
