@@ -8,7 +8,7 @@ $size-4rem: 4rem;
 $size-6rem: 6rem;
 $size-8rem: 8rem;
 $size-16rem: 16rem;
-$size-20rem: 20rem; 
+$size-20rem: 20rem;
 $size-48rem: 48rem;
 
 .width-1rem { width: $size-1rem; }
@@ -42,6 +42,7 @@ $size-xxl: 7.5rem;
 $size-xxxl: 20rem; // 320px
 $size-xxxxl: 22.5rem; // 360px
 $size-huge: 23.25rem;
+$size-very-big: 27rem;
 $size-very-huge: 38rem; // 608px
 
 .width-tiny { width: $size-tiny; }
@@ -56,6 +57,7 @@ $size-very-huge: 38rem; // 608px
 .width-xxxl { width: $size-xxxl; }
 .width-xxxxl { width: $size-xxxxl; }
 .width-huge { width: $size-huge; }
+.width-very-big { width: $size-very-big; }
 .width-very-huge { width: $size-very-huge; }
 
 .height-tiny { height: $size-tiny; }
@@ -68,4 +70,5 @@ $size-very-huge: 38rem; // 608px
 .height-xl { height: $size-xl; }
 .height-xxl { height: $size-xxl; }
 .height-xxxl { height: $size-xxxl; }
+.height-very-big { height: $size-very-big; }
 .height-huge { height: $size-huge; }

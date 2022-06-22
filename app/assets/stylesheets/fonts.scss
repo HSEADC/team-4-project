@@ -2,14 +2,27 @@
 
 @font-face {
   font-family: "VelaSans";
-  src: url("VelaSans-Bold.woff") format("woff"),
-    url("VelaSans-ExtraBold.woff") format("woff"),
-    url("VelaSans-ExtraLight.woff") format("woff"),
-    url("VelaSans-Light.woff") format("woff"),
-    url("VelaSans-Medium.woff") format("woff"),
-    url("VelaSans-Regular.woff") format("woff"),
-    url("VelaSans-SemiBold.woff") format("woff");
+  src: url("VelaSans-Bold.woff") format("woff");
+    // url("VelaSans-ExtraBold.woff") format("woff"),
+    // url("VelaSans-ExtraLight.woff") format("woff"),
+    // url("VelaSans-Light.woff") format("woff"),
+    // url("VelaSans-Medium.woff") format("woff"),
+    // url("VelaSans-Regular.woff") format("woff"),
+    // url("VelaSans-SemiBold.woff") format("woff");
+    font-weight: 600;
  }
+
+ @font-face {
+   font-family: "VelaSans";
+   src:
+     // url("VelaSans-ExtraBold.woff") format("woff"),
+     // url("VelaSans-ExtraLight.woff") format("woff"),
+     // url("VelaSans-Light.woff") format("woff");
+     url("VelaSans-Medium.woff") format("woff");
+     // url("VelaSans-Regular.woff") format("woff"),
+     // url("VelaSans-SemiBold.woff") format("woff");
+     font-weight: 500;
+  }
 
 @font-face {
   font-family: "Pixeboy";
@@ -19,21 +32,47 @@
 h1, h2, h3, .footnote, .button, a, input, select, textarea,
 .h1, .h2, .h3, .a, div {
   font-family: 'VelaSans';
+  // font-style: normal;
+  font-weight: 500;
+}
+
+.but {
+  font-family: 'Vela Sans';
   font-style: normal;
   font-weight: 600;
+  font-size: 18px;
+  line-height: 143%;
+  /* identical to box height, or 26px */
+
+  text-align: center;
+  letter-spacing: 0.01em;
+
+  color: #000000;
 }
 
 p, .p {
   font-weight: 500;
 }
 
+.p2 {
+  font-family: 'Vela Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 30px;
+  /* or 188% */
+
+
+  color: rgba(255, 255, 255, 0.3);
+}
+
 h4, .h4 {
   font-family: 'Pixeboy';
-  font-style: normal;
+  // font-style: normal;
   font-size: 2.5rem;
 }
 
-h1, h2, h3 { font-weight: bold; }
+h1, h2, h3, .h1, .h2, .h3 { font-weight: 600; }
 h4 { font-weight: 600; }
 
 p, .footnote, a, .a { color: $grey2; }

@@ -55,6 +55,13 @@
   padding: 0.5rem 1rem;
 }
 
+.link_button2 {
+  @include colors($bg-primary, $grey3);
+  @include hover_colors(#288726, $hover-green);
+  @include disabled_colors($bg-secondary, $grey3);
+  padding: 0.5rem 1rem;
+}
+
 // .horizontal {
 //   display: flex;
 // }

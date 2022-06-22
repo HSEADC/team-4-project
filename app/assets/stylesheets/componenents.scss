@@ -2,6 +2,22 @@
 @import "fonts";
 @import "constants";
 
+.link_container {
+  display: flex;
+  flex-direction: row;
+}
+
+.up-down {
+  display: flex;
+  flex-direction: column;
+}
+
+.edit_form {
+  display: flex;
+  justify-content: center !important;
+  margin: 0 !important;
+}
+
 .event_container {
   width: 100%;
   justify-content: center;
