@@ -16,6 +16,10 @@
   }
 }
 
+.tag {
+  background-color: #0A2409;
+}
+
 .l_button {
   @include button($padding-w, $padding-w);
   @include h2;

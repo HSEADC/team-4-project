@@ -126,17 +126,9 @@ export default class EventContainer extends React.Component {
       <div className='height-4rem'></div>
 
       <div className='post_card_edit'>
-
-      // спрятат input для загрузки картинки
-      // width: 500px;
-      // height: 500px;
-      // position: absolute;
-      // cursor: pointer;
-      // opacity: 0;
-
         <div className='post_card_info'>
+          <input type="file" ref={this.fileInput} />
           <div className='height-2rem'></div>
-          <input style={{ display: 'none', width: "100px" }} type="file" ref={this.fileInput} />
           <i className="imagePlaceholder"></i>
           <div className='height-l'></div>
           <div className='horizontal buttons'>
@@ -159,10 +151,11 @@ export default class EventContainer extends React.Component {
                 className="input button grey1"
               />
 
+            <div className='height-1rem'></div>
             <div className='label_default_input column'>
               <input
                 type="text"
-                placeholder="Заголовок"
+                placeholder="Ссылка"
                 name="name"
                 defaultValue={ this.props.new_post.url }
                 onChange={ this.handleUrlChange }

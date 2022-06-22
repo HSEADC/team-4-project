@@ -13,6 +13,7 @@
     .height-xs
 
     h3.grey1 #{ vacancy&.title }
+    .height-xxxs
     .info
         p.footnote #{ Vacancy::OCCUPATION_TYPE[vacancy&.occupation_type&.to_sym] }
         - vacancy&.cities&.each do |city|
@@ -25,5 +26,5 @@
 
     .height-xs
     .tags
-        .button.s_button.fit-content.green_button #{ Vacancy::GRADE[vacancy&.grade&.to_sym] }
+        .tag.s_button.fit-content.green #{ Vacancy::GRADE[vacancy&.grade&.to_sym] }
         .width-xs

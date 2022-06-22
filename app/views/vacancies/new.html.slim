@@ -1,7 +1,7 @@
 .height-4rem
 = form_for @vacancy, url: { action: "create" }, authenticity_token: false, html: { class: 'form' } do |f|
   .base_info
-    = f.text_field :title, class: "input h1 grey1", placeholder: "Название вакансии", autocomplete: 'off'
+    = f.text_field :title, class: "input h2 grey1", placeholder: "Название вакансии", autocomplete: 'off'
 
     .height-2rem
     h3.grey1 О стажировке*
@@ -57,11 +57,10 @@
     .height-2rem
 
 
-    h3.grey1 Куда отправлять заявки
 
     .height-1rem
 
-  //  input id="vehicle1" name="input" class="input" placeholder="Email"
+    input id="vehicle1" name="input" class="input" placeholder="Email"
 
     .height-1rem
 

@@ -2,6 +2,17 @@
 @import "fonts";
 @import "constants";
 
+.event_container {
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  background: url('backImage.jpg') no-repeat center center;
+}
+
+.padding_l {
+  padding-left: 4rem;
+}
+
 .post_types {
   display: flex;
   flex-direction: row;
@@ -12,7 +23,6 @@
 .post_type {
   display: flex;
   flex-direction: column;
-
 }
 
 .post_type1 {
@@ -33,6 +43,13 @@
   flex-direction: column;
   background-color: $bg-primary;
   border-radius: 1rem;
+  [type="file"] {
+    cursor: pointer;
+    width: 22.5rem;
+    height: 12rem;
+    opacity: 0;
+    position: absolute;
+  }
 }
 
 .post_card_input {
@@ -45,6 +62,7 @@
 }
 
 .post_card_edit {
+  position: relative;
   background-color: $bg-secondary;
 }
 
