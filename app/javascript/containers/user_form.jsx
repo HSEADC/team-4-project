@@ -12,6 +12,18 @@ export default class UserForm extends React.Component {
 		this.handleNameChange = this.handleNameChange.bind(this)
 		this.handleSurnameChange = this.handleSurnameChange.bind(this)
 		this.handleLink1Change = this.handleLink1Change.bind(this)
+		this.handleLink2Change = this.handleLink2Change.bind(this)
+		this.handleLink3Change = this.handleLink3Change.bind(this)
+		this.handleBehanceChange = this.handleBehanceChange.bind(this)
+		this.handleDribbleChange = this.handleDribbleChange.bind(this)
+		this.handleTelegramChange = this.handleTelegramChange.bind(this)
+		this.handleLinkedlnChange = this.handleLinkedlnChange.bind(this)
+		this.handleVkChange = this.handleVkChange.bind(this)
+		this.handleYoutubeChange = this.handleYoutubeChange.bind(this)
+		this.handleTwitterChange = this.handleTwitterChange.bind(this)
+
+
+
 
 		this.handleSubmit = this.handleSubmit.bind(this)
 		this.state = {
@@ -28,7 +40,6 @@ export default class UserForm extends React.Component {
 
 	handleSubmit(e) {
 		var userName = this.state.user.name
-		// var userName = this.props.user.name
 		$.ajax({
 				url: "/users/" + this.props.user.name,
 				dataType: 'JSON',
@@ -86,6 +97,89 @@ export default class UserForm extends React.Component {
 		})
 	}
 
+	handleLink2Change(link) {
+		let newState = this.state
+		newState.user.contacts.link2 = link
+
+		this.setState({
+			newState
+		})
+	}
+
+
+
+	handleLink3Change(link) {
+		let newState = this.state
+		newState.user.contacts.link3 = link
+
+		this.setState({
+			newState
+		})
+	}
+
+	handleBehanceChange(link) {
+		let newState = this.state
+		newState.user.socials.behance = link
+
+		this.setState({
+			newState
+		})
+	}
+
+	handleDribbleChange(link) {
+		let newState = this.state
+		newState.user.socials.dribble = link
+
+		this.setState({
+			newState
+		})
+	}
+
+	handleTelegramChange(link) {
+		let newState = this.state
+		newState.user.socials.telegram = link
+
+		this.setState({
+			newState
+		})
+	}
+
+	handleLinkedlnChange(link) {
+		let newState = this.state
+		newState.user.socials.linkedln = link
+
+		this.setState({
+			newState
+		})
+	}
+
+	handleVkChange(link) {
+		let newState = this.state
+		newState.user.socials.vk = link
+
+		this.setState({
+			newState
+		})
+	}
+
+	handleYoutubeChange(link) {
+		let newState = this.state
+		newState.user.socials.youtube = link
+
+		this.setState({
+			newState
+		})
+	}
+
+	handleTwitterChange(link) {
+		let newState = this.state
+		newState.user.socials.twitter = link
+
+		this.setState({
+			newState
+		})
+	}
+
 
 	render() {
 		return (
@@ -96,6 +190,18 @@ export default class UserForm extends React.Component {
           handleSurnameChange={ this.handleSurnameChange }
           handleEmailChange={ this.handleEmailChange }
 					handleLink1Change={ this.handleLink1Change }
+					handleLink2Change={ this.handleLink2Change }
+					handleLink3Change={ this.handleLink3Change }
+					handleBehanceChange={ this.handleBehanceChange }
+					handleDribbleChange={ this.handleDribbleChange }
+					handleTelegramChange={ this.handleTelegramChange }
+					handleLinkedlnChange={ this.handleLinkedlnChange }
+					handleVkChange={ this.handleVkChange }
+					handleYoutubeChange={ this.handleYoutubeChange }
+					handleTwitterChange={ this.handleTwitterChange }
+
+
+
         />
 				<div className='horizontal buttons'>
 						<button

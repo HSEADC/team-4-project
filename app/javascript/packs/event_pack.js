@@ -6,7 +6,6 @@ import EventContainer from '../containers/EventContainer'
 
 
 document.addEventListener('DOMContentLoaded', () => {
- // const userForm = JSON.parse(document.getElementsByClassName('user_form')[0].dataset.props)
-
- ReactDOM.render(<EventContainer />, document.getElementsByClassName('user_form')[0].appendChild(document.createElement('div')))
+ const images = JSON.parse(document.getElementsByClassName('images')[0].dataset.props)
+ ReactDOM.render(<EventContainer {...images}/>, document.getElementsByClassName('form')[0].appendChild(document.createElement('div')))
 })

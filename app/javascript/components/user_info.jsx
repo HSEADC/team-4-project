@@ -14,6 +14,7 @@ class UserInfo extends React.Component {
 		this.handleLink1Change = this.handleLink1Change.bind(this)
 		this.handleLink2Change = this.handleLink2Change.bind(this)
 		this.handleLink3Change = this.handleLink3Change.bind(this)
+
 		this.handleBehanceChange = this.handleBehanceChange.bind(this)
 		this.handleDribbleChange = this.handleDribbleChange.bind(this)
 		this.handleTelegramChange = this.handleTelegramChange.bind(this)
@@ -164,8 +165,8 @@ class UserInfo extends React.Component {
 					<input
 							type="text"
 							placeholder="https://"
-							name="link_2"
-							value={ this.props.user.link2 }
+							name="link2"
+							defaultValue={ this.props.user.contacts.link2 }
 							onChange={ this.handleLink2Change }
 							className="input button grey1"
 						/>
@@ -179,8 +180,8 @@ class UserInfo extends React.Component {
 					<input
 							type="text"
 							placeholder="https://"
-							name="link_3"
-							value={ this.props.user.link3 }
+							name="link3"
+							defaultValue={ this.props.user.contacts.link3 }
 							onChange={ this.handleLink3Change }
 							className="input button grey1"
 						/>
@@ -202,7 +203,7 @@ class UserInfo extends React.Component {
 								type="text"
 								placeholder="https://"
 								name="behance"
-								value={ this.props.user.behance }
+								defaultValue={ this.props.user.socials.behance }
 								onChange={ this.handleBehanceChange }
 								className="input button grey1"
 							/>
@@ -217,7 +218,7 @@ class UserInfo extends React.Component {
 						type="text"
 						placeholder="https://"
 						name="dribble"
-						value={ this.props.user.dribble }
+						defaultValue={ this.props.user.socials.dribble }
 						onChange={ this.handleDribbleChange }
 						className="input button grey1"
 						/>
@@ -232,7 +233,7 @@ class UserInfo extends React.Component {
 					type="text"
 					placeholder="https://"
 					name="telegram"
-					value={ this.props.user.telegram }
+					defaultValue={ this.props.user.socials.telegram }
 					onChange={ this.handleTelegramChange }
 					className="input button grey1"
 					/>
@@ -247,7 +248,7 @@ class UserInfo extends React.Component {
 							type="text"
 							placeholder="https://"
 							name="linkedln"
-							value={ this.props.user.linkedln }
+							defaultValue={ this.props.user.socials.linkedln }
 							onChange={ this.handleLinkedlnChange }
 							className="input button grey1"
 						/>
@@ -262,7 +263,7 @@ class UserInfo extends React.Component {
 						type="text"
 						placeholder="https://"
 						name="vk"
-						value={ this.props.user.vk }
+						defaultValue={ this.props.user.socials.vk }
 						onChange={ this.handleVkChange }
 						className="input button grey1"
 					/>
@@ -277,7 +278,7 @@ class UserInfo extends React.Component {
 						type="text"
 						placeholder="https://"
 						name="youtube"
-						value={ this.props.user.youtube }
+						defaultValue={ this.props.user.socials.youtube }
 						onChange={ this.handleYoutubeChange }
 						className="input button grey1"
 					/>
@@ -292,7 +293,7 @@ class UserInfo extends React.Component {
 							type="text"
 							placeholder="https://"
 							name="twitter"
-							value={ this.props.user.twitter }
+							defaultValue={ this.props.user.socials.twitter }
 							 onChange={ this.handleTwitterChange }
 							className="input button grey1"
 						/>

@@ -1,16 +1,17 @@
 class PostsController < ApplicationController
   def new
+    @user = current_user
     @post = Post.new
   end
 
   def create
     @post = current_user.posts.new(post_params)
-
-    if @post.save
-      redirect_to current_user, notice: 'post was successfully created.'
-    else
-      render :new, alert: @post.errors
-    end
+    @post.save
+    head :ok
+    #   redirect_to current_user, notice: 'post was successfully created.'
+    # else
+    #   render :new, alert: @post.errors
+    # end
   end
 
   def destroy
@@ -23,7 +24,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(
+    params.permit(
       :title, :text, :url, :image
     )
   end

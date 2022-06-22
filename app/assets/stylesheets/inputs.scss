@@ -21,18 +21,16 @@
   ::placeholder { color: $grey2; }
 }
 
-// INPUT
-
-.input {
-  @include default_input(0.5rem, 0.75rem);
-}
-
 textarea {
   @include default_input(0.5rem, 0.75rem);
   resize: none;
   overflow: hidden;
   width: 20rem;
   min-height: 6rem;
+}
+
+.input {
+  @include default_input(0.5rem, 0.75rem);
 }
 
 // SEARCH
@@ -72,27 +70,7 @@ textarea {
   }
 }
 
-.post_types {
-  display: flex;
-  flex-direction: row;
-}
 
-.post_type {
-  display: flex;
-  flex-direction: column;
-}
-
-.post_card_info {
-  display: flex;
-  flex-direction: column;
-  background-color: $bg-primary;
-}
-
-.post_card_input {
-  display: flex;
-  flex-direction: column;
-  background-color: $bg-secondary;
-}
 
 // IMAGE UPLOADER
 
@@ -153,4 +131,68 @@ select:-webkit-autofill:focus {
   -webkit-text-fill-color: $grey1;
   -webkit-transition: background-color 5000s ease-in-out 0s;
   transition: background-color 5000s ease-in-out 0s;
+}
+
+
+
+:root {
+  --primary-light: #41EF3E;
+  --primary: #41EF3E;
+  --primary-dark: #41EF3E;
+
+  --white: #41EF3E;
+  --greyLight-1: #E4EBF5;
+  --green: #41EF3E;
+  --greyLight-3: #41EF3E;
+  --greyDark: #F1F1F1;
+}
+
+$shadow: .2rem .2rem .5rem var(--green),
+-.2rem -.2rem .5rem var(--green);
+$inner-shadow: inset .2rem .2rem .5rem var(--green),
+inset -.2rem -.2rem .5rem var(--green);
+
+
+
+.radio {
+  input { display: none; }
+  box-sizing: border-box;
+
+  &__1, &__2, &__3 {
+
+    & input:checked {
+        & ~ label {
+          background: $green;
+          outline: 4px solid $black;
+          outline-offset: -8px;
+        }
+        &::after {}
+    }
+
+    label {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+		  cursor: pointer;
+      width: 1.5rem;
+			height: 1.5rem;
+			border-radius: 50%;
+
+      background: $black;
+      outline: 4px solid $grey2;
+      outline-offset: -4px;
+
+      &:hover {&::after{ outline: 4px solid $green; outline-offset: -4px; } }
+
+		  &::after {
+			  content: "";
+			  position: absolute;
+			  width: 1.5rem;
+			  height: 1.5rem;
+        border-radius: 50%;
+			  transition: 0.3s ease;
+		  }
+    }
+  }
 }

@@ -20,20 +20,20 @@ html
         .width-xxs
         h4.green •
         .width-xxs
-        = link_to 'CAREER', vacancies_path, class: "h4 grey3 carrer"
+        = link_to 'CAREER', vacancies_path, class: "footnote grey1 carrer"
         .width-2rem
-        = link_to 'MAIN', root_path , class: "h4 grey3 main"
-        .width-2rem
+        //= link_to 'MAIN', root_path , class: "footnote grey1 main"
+        //.width-2rem
         - if account_signed_in? && current_account.user.present?
-          = link_to 'ME', current_account.user , class: "h4 grey3 me"
+          = link_to 'ME', current_account.user , class: "footnote grey1 me"
         - else
-          = link_to 'ME', root_path , class: "h4 grey3 me"
+          = link_to 'ME', root_path , class: "footnote grey1 me"
         .width-2rem
-        = link_to 'EVENTS', events_path , class: "h4 grey3 main"
+        = link_to 'EVENTS', events_path , class: "footnote grey1 main"
         .width-2rem
-        = link_to 'YOURNAME', vacancies_path, class: "h4 grey3 yourname"
-        .width-2rem
-        = link_to 'BOOKMARKS', vacancies_path, class: "h4 grey3 bookmarks"
+        //= link_to 'YOURNAME', vacancies_path, class: "h4 grey3 yourname"
+      //  .width-2rem
+        //= link_to 'BOOKMARKS', vacancies_path, class: "h4 grey3 bookmarks"
 
       .menu_items_right
         - if account_signed_in?
