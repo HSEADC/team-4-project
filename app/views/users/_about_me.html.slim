@@ -15,6 +15,19 @@
       .l_button.link_button.width-20rem
         = link_to host, link, target: '_blank', class: "#{_app}-social-link"
 
+
+  - @account.contacts&.each do |_app, link|
+    - if link.present?
+      .height-1rem
+      - host = URI(link).host
+
+      .l_button.link_button.width-20rem
+        = link_to host, link, target: '_blank', class: "#{_app}-social-link"
+
+.height-l
+
+.l_button.link_button.width-21rem = link_to 'изменить данные о себе', edit_user_path(@current_user)
+
 .height-l
 
 .card-me-about-social.width-21rem

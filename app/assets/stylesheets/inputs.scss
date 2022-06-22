@@ -46,6 +46,15 @@ textarea {
   }
 }
 
+.menu_search2 {
+  .search_input { @include default_input(0.75rem, 30rem); }
+  .search {
+    position: absolute;
+    opacity: 50%;
+    margin: 0.6rem 0.75rem;
+  }
+}
+
 // CHECK BOX
 .check_box {
   display: inline-flex;
@@ -71,6 +80,13 @@ textarea {
     @include hover-cursor;
   }
 }
+
+.tag {
+  background-color: #0A2409;;
+  padding: 4px 11px;
+  border-radius: 8px;
+}
+
 
 // IMAGE UPLOADER
 

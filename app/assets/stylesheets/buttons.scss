@@ -45,7 +45,7 @@
 }
 
 .link_button {
-  @include colors($bg-secondary, $green);
+  @include colors($bg-primary, $green);
   @include hover_colors($bg-secondary, $hover-green);
   @include disabled_colors($bg-secondary, $grey3);
   padding: 0.5rem 1rem;

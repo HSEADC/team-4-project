@@ -4,17 +4,17 @@
   .height-1rem
 
   .new_avatar
-    img.avatar
+  = image_tag (@account.image.url || "ava.svg"), class: 'avatar'
     .width-1rem
     .buttons
-      .s_button.black_button.fit-content Загрузить
-      .height-1rem
-      .s_button.green_button.fit-content Собрать чубрика
+      //.s_button.black_button.fit-content Загрузить
+      .height-2rem
+      .s_button.green_button.fit-content Загрузить
 
   .height-l
 
   = f.fields_for :user, User.new do |subform|
-    = subform.text_field :name, autofocus: true, autocomplete: "name", class: "input", placeholder: "Имя"
+    = subform.text_field :name, autofocus: true, autocomplete: "name", class: "input", placeholder: "Никнейм"
 
   .height-m
   = f.email_field :email, autocomplete: "email", class: "input", placeholder: "Email"

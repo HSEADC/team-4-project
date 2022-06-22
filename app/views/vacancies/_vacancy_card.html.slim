@@ -1,14 +1,14 @@
 = link_to vacancy_path(vacancy.id), class: "card card-vacancy grey2 width-20rem" do
     .logo
-        - if vacancy.account.image.present?
-          = image_tag(vacancy.account.image.url)
-        - else
-          img.avatar
-        .width-xs
-        - if vacancy.account.company.present?
-          .button #{ vacancy.account.company.name }
-        - if vacancy.account.user.present?
-          .button #{ vacancy.account.user.name }
+      - if vacancy.account.image.present?
+        = image_tag(vacancy.account.image.url)
+      - else
+        img.avatar
+      .width-xs
+      - if vacancy.account.company.present?
+        .button #{ vacancy.account.company.name }
+      - if vacancy.account.user.present?
+        .button #{ vacancy.account.user.name }
 
     .height-xs
 
@@ -25,5 +25,5 @@
 
     .height-xs
     .tags
-        .button.s_button.fit-content.green_button #{ Vacancy::GRADE[vacancy&.grade&.to_sym] }
+        .tag.footnote.green #{ Vacancy::GRADE[vacancy&.grade&.to_sym] }
         .width-xs
